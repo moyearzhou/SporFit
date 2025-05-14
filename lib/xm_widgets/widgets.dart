@@ -10,16 +10,16 @@ import 'package:flutter/material.dart';
 import 'package:framework/public.dart';
 
 xmNetWorkImage(String url, double width,
-    {double height, String placeholdlerImgNm = 'icon'}) {
+    {double? height, String placeholdlerImgNm = 'icon'}) {
   return CachedNetworkImage(
-    width: xmDp(width),
-    height: null != height ? xmDp(height) : xmDp(width),
+    width: xmDp(width).toDouble(),
+    height: null != height ? xmDp(height).toDouble() : xmDp(width).toDouble(),
     imageUrl: url,
     fit: BoxFit.cover,
     placeholder: (context, url) {
       return Image(
-          width: xmDp(width),
-          height: null != height ? xmDp(height) : xmDp(width),
+          width: xmDp(width).toDouble(),
+          height: null != height ? xmDp(height).toDouble() : xmDp(width).toDouble(),
           image: AssetImage('res/imgs/$placeholdlerImgNm.png'));
     },
   );

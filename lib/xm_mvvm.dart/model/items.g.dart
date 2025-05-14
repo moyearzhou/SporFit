@@ -9,10 +9,14 @@ part of 'items.dart';
 Items _$ItemsFromJson(Map<String, dynamic> json) {
   return Items()
     ..lastId = json['lastId'] as String
-    ..items = (json['items'] as List)
-        ?.map((e) =>
-            e == null ? null : Entrys.fromJson(e as Map<String, dynamic>))
+    ..items = (json['items'] as List?)
+        ?.map((e) => Entrys.fromJson(e as Map<String, dynamic>))
         ?.toList();
+
+    // ..items = (json['items'] as List)
+    //     ?.map((e) =>
+    //         e == null ? null : Entrys.fromJson(e as Map<String, dynamic>))
+    //     ?.toList();
 }
 
 Map<String, dynamic> _$ItemsToJson(Items instance) =>

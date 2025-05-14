@@ -13,7 +13,7 @@ abstract class NetworkBridge {
   List<BridgeInterceptor> _interceptors = [];
   List<BridgeInterceptor> get interceptors => _interceptors;
 
-  NetworkBridge({this.proxyProt, this.remoteURI});
+  NetworkBridge({required this.proxyProt, required this.remoteURI});
 
   /// 启动代理服务器
   Future<void> daemon();
@@ -27,9 +27,9 @@ abstract class NetworkBridge {
 
 /// 在本机打开一个HttpServices用于桥接和捕获特殊的RPC请求，相当于一个本地代理服务器
 class HttpBridge extends NetworkBridge {
-  HttpServer _bridgeServer;
+  HttpServer? _bridgeServer;
 
-  HttpBridge({int proxyProt, Uri remoteURI})
+  HttpBridge({required int proxyProt, required Uri remoteURI})
       : super(proxyProt: proxyProt, remoteURI: remoteURI);
 
   /// 启动代理服务器
@@ -38,17 +38,19 @@ class HttpBridge extends NetworkBridge {
     HttpServer.bind(InternetAddress.loopbackIPv4, proxyProt)
         .then((server) async {
       _bridgeServer = server;
-      _bridgeServer.defaultResponseHeaders
-        ..clear()
-        ..set('Access-Control-Allow-Credentials', true)
-        ..set('Access-Control-Allow-Headers', 'content-type')
-        ..set('Access-Control-Allow-Methods', 'POST')
-        ..set('Access-Control-Allow-Origin', '*')
-        ..set('Access-Control-Max-Age', 600)
-        ..set('Connection', 'keep-alive')
-        ..date = DateTime.now();
+      if (_bridgeServer != null) {
+        _bridgeServer!.defaultResponseHeaders
+          ..clear()
+          ..set('Access-Control-Allow-Credentials', true)
+          ..set('Access-Control-Allow-Headers', 'content-type')
+          ..set('Access-Control-Allow-Methods', 'POST')
+          ..set('Access-Control-Allow-Origin', '*')
+          ..set('Access-Control-Max-Age', 600)
+          ..set('Connection', 'keep-alive')
+          ..date = DateTime.now();
+      }
 
-      await for (HttpRequest request in _bridgeServer) {
+      await for (HttpRequest request in _bridgeServer!) {
         handleRequest(request);
       }
     }).catchError((e) {
@@ -60,7 +62,7 @@ class HttpBridge extends NetworkBridge {
 
   @override
   void shutdown() {
-    _bridgeServer.close(force: true);
+    _bridgeServer?.close(force: true);
     return;
   }
 
@@ -84,9 +86,9 @@ class HttpBridge extends NetworkBridge {
       /// 处理拦截器
       for (BridgeInterceptor interceptor in interceptors) {
         /// 如果拦截器需要处理
-        if (interceptor.preHandle(request, rawBody, _bridgeServer)) {
+        if (interceptor.preHandle(request, rawBody, _bridgeServer!)) {
           /// 拦截器需要截断处理
-          final ret = interceptor.postHandle(request, rawBody, _bridgeServer);
+          final ret = interceptor.postHandle(request, rawBody, _bridgeServer!);
 
           /// 继续处理
           if (ret == InterceptorHandleType.Next) {
@@ -115,7 +117,7 @@ class HttpBridge extends NetworkBridge {
 
       /// 处理逻辑
       http.post(
-        remoteURI.toString(),
+        remoteURI,
         body: rawBody,
         headers: {
           'content-type': 'application/json',
@@ -129,7 +131,7 @@ class HttpBridge extends NetworkBridge {
 
         interceptors.forEach((interceptor) => interceptor.afterCompletion(
               request,
-              _bridgeServer,
+              _bridgeServer!,
               remoteResponse.body,
             ));
       });

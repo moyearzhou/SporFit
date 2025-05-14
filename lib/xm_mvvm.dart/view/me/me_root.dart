@@ -5,7 +5,7 @@ import '../../../public.dart';
 import 'me_data.dart';
 
 class MePage extends StatefulWidget {
-  MePage({Key key}) : super(key: key);
+  MePage({Key? key}) : super(key: key);
 
   _MePageState createState() => _MePageState();
 }

@@ -16,7 +16,7 @@ import 'logs_Interceptors.dart';
  */
 class Z6HttpManager {
   /// global dio object
-  static Dio dio;
+  static late Dio dio;
 
   /// default options
   static const String API_PREFIX = 'https://api.gotokeep.com/feed/v1/';
@@ -87,8 +87,8 @@ class Z6HttpManager {
       // 全局属性：请求前缀、连接超时时间、响应超时时间
       BaseOptions options = new BaseOptions(
         baseUrl: Api.prefix,
-        connectTimeout: CONNECT_TIMEOUT,
-        receiveTimeout: RECEIVE_TIMEOUT,
+        connectTimeout: Duration(milliseconds: CONNECT_TIMEOUT),
+        receiveTimeout: Duration(milliseconds: RECEIVE_TIMEOUT),
       );
       dio = Dio(options);
       // dio.options.baseUrl = Api.PREFIX;
@@ -102,6 +102,7 @@ class Z6HttpManager {
 
   /// 清空 dio 对象
   static clear() {
-    dio = null;
+    // dio = null;
+    dio.interceptors.clear();
   }
 }

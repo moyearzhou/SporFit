@@ -6,14 +6,14 @@ import 'package:framework/xm_mvvm.dart/view/base.dart';
 import 'package:framework/xm_mvvm.dart/viewmodel/home_vm.dart';
 
 class HomePage extends XMBasePage {
-  HomePage({Key key}) : super(key: key);
+  HomePage({required Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends XMBasePageState {
-  HomeVm vm;
+  late HomeVm vm;
 
   @override
   void initState() {
@@ -43,9 +43,9 @@ class _HomePageState extends XMBasePageState {
                         child: _tabbar(),
                         alignment: Alignment.centerLeft,
                         margin: EdgeInsets.only(
-                          top: xmDp(32),
-                          bottom: xmDp(20),
-                          left: xmDp(18),
+                          top: xmDp(32).toDouble(),
+                          bottom: xmDp(20).toDouble(),
+                          left: xmDp(18).toDouble(),
                         )),
                     Container(height: 1, color: XMColor.lineColor),
                   ],
@@ -94,16 +94,16 @@ class _HomePageState extends XMBasePageState {
       labelColor: Color(0xff707070),
       unselectedLabelColor: Colors.black,
       indicatorSize: TabBarIndicatorSize.label,
-      labelPadding: EdgeInsets.symmetric(horizontal: xmDp(15)),
+      labelPadding: EdgeInsets.symmetric(horizontal: xmDp(15).toDouble()),
       indicator: BoxDecoration(
           color: Color(0xfff1f1f1),
-          borderRadius: BorderRadius.circular(xmDp(14))),
+          borderRadius: BorderRadius.circular(xmDp(14).toDouble())),
       tabs: vm.list.map((e) {
         return Container(
-            width: xmDp(200),
-            height: xmDp(80),
+            width: xmDp(200).toDouble(),
+            height: xmDp(80).toDouble(),
             alignment: Alignment.center,
-            child: Text(e[0], style: TextStyle(fontSize: xmSp(40))));
+            child: Text(e[0], style: TextStyle(fontSize: xmSp(40).toDouble())));
       }).toList(),
     );
   }

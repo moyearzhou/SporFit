@@ -2,6 +2,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 class Toast {
   static show(String msg) {
-    Fluttertoast.showToast(msg: msg, timeInSecForIos: 3);
+    Fluttertoast.showToast(msg: msg, timeInSecForIosWeb: 3);
   }
 }

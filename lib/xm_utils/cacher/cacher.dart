@@ -4,7 +4,7 @@ class Cacher<K,V> {
 
     Map<K, V> _cache = Map();
 
-    CacherCreateFunction<K,V> createFunction;
+    late CacherCreateFunction<K,V> createFunction;
 
     // 判断是否存在
     bool contains(K key) => _cache.containsKey(key) && _cache[key] != null;
@@ -17,7 +17,7 @@ class Cacher<K,V> {
             _cache[key] = createFunction(key);
         }
 
-        return _cache[key];
+        return _cache[key]!;
     }
 
     void setCache(K key, V value) {

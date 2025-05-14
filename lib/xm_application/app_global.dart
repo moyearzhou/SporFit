@@ -7,9 +7,9 @@ import 'package:framework/xm_utils/environment/evn_model.dart';
 
 class XMAppGlobal {
   // 环境配置
-  static XMEnvModel lmEnv;
-  static String lmAppConfigBaseURL = '${lmEnv.baseUrl}/dappConfig/app/';
-  static String lmDappBaseURL = '${lmEnv.baseUrl}/#/';
+  static XMEnvModel? lmEnv;
+  static String lmAppConfigBaseURL = '${lmEnv?.baseUrl?? ''}/dappConfig/app/';
+  static String lmDappBaseURL = '${lmEnv?.baseUrl}/#/';
   static bool screenInited = false;
 
   static Future init() async {

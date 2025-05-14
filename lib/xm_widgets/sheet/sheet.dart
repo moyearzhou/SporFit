@@ -11,20 +11,20 @@ enum XMSheetNavLeftStyle {
 }
 
 class XMSheet {
-  static XMRefreshWidget _modalWid;
+  static late XMRefreshWidget _modalWid;
 
   static List<XMRefreshWidget> _widgets = [];
 
-  static XMSheetCloseHandler _closeHandler;
+  static XMSheetCloseHandler? _closeHandler;
 
   static PageController pageCtr = PageController();
 
-  static BuildContext ctxt;
+  static BuildContext? ctxt;
 
   static bool showing = false;
 
   static present(BuildContext context, XMRefreshWidget rootWid,
-      {bool isDismissible = true, XMSheetCloseHandler closeHandler}) {
+      {bool isDismissible = true, XMSheetCloseHandler? closeHandler}) {
     showing = true;
     _widgets = [rootWid];
     _closeHandler = closeHandler;
@@ -36,10 +36,10 @@ class XMSheet {
             children: [
               _expandedWid(isDismissible),
               Container(
-                width: xmSW(),
+                width: xmSW().toDouble(),
                 constraints: BoxConstraints(
                   minHeight: 0,
-                  maxHeight: xmSH() - ScreenUtil.statusBarHeight - xmAppBarH,
+                  maxHeight: xmSH() - ScreenUtil().statusBarHeight - xmAppBarH,
                 ),
                 child: PageView(
                   physics: NeverScrollableScrollPhysics(),
@@ -93,15 +93,15 @@ class XMSheet {
     _widgets.add(pushWid);
     _modalWid.reload();
     if (pageCtr.hasClients) {
-      pageCtr.animateToPage(pageCtr.page.toInt() + 1,
+      pageCtr.animateToPage(pageCtr.page?.toInt() ?? 0 + 1,
           duration: Duration(milliseconds: 250), curve: Curves.easeIn);
     }
   }
 
   static pop() {
-    if (pageCtr.hasClients && pageCtr.page > 0) {
+    if (pageCtr.hasClients && pageCtr.page! > 0) {
       pageCtr
-          .animateToPage(pageCtr.page.toInt() - 1,
+          .animateToPage(pageCtr.page!.toInt() - 1,
               duration: Duration(milliseconds: 250), curve: Curves.easeOut)
           .whenComplete(() {
         _widgets.removeLast();
@@ -109,7 +109,7 @@ class XMSheet {
     }
   }
 
-  static reload({remodal = false, List<int> resubs}) {
+  static reload({remodal = false, List<int>? resubs}) {
     if (null != resubs)
       resubs.forEach((idx) {
         _widgets[idx].reload();
@@ -149,9 +149,9 @@ class XMSheet {
 
     if (_closeHandler != null) {
       if (null != info) {
-        _closeHandler(result: info);
+        _closeHandler!(result: info);
       } else {
-        _closeHandler();
+        _closeHandler!();
       }
     }
     ctxt = null;
@@ -191,15 +191,15 @@ XMRefreshWidget sheetWidget(SheetWidgetBuildData sb) {
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius:
-                  BorderRadius.vertical(top: Radius.circular(xmDp(25)))),
+                  BorderRadius.vertical(top: Radius.circular(xmDp(25).toDouble()))),
           child: Column(
             children: [
               Stack(
                 alignment: AlignmentDirectional.centerStart,
                 children: [
                   Container(
-                    width: xmSW(),
-                    height: xmAppBarH,
+                    width: xmSW().toDouble(),
+                    height: xmAppBarH.toDouble(),
                     decoration: BoxDecoration(
                         border: Border(
                             bottom: BorderSide(color: XMColor.lineColor))),
@@ -211,7 +211,7 @@ XMRefreshWidget sheetWidget(SheetWidgetBuildData sb) {
                   ),
                   Offstage(
                     offstage: leftOffstage,
-                    child: Row(children: [SizedBox(width: xmDp(20)), leftWid]),
+                    child: Row(children: [SizedBox(width: xmDp(20).toDouble()), leftWid]),
                   ),
                 ],
               ),
@@ -219,7 +219,7 @@ XMRefreshWidget sheetWidget(SheetWidgetBuildData sb) {
                 constraints: BoxConstraints(
                     minHeight: 0,
                     maxHeight: xmSH() -
-                        ScreenUtil.statusBarHeight -
+                        ScreenUtil().statusBarHeight -
                         xmAppBarH * 2 -
                         MediaQuery.of(context).padding.bottom),
                 child: ListView.builder(
@@ -245,10 +245,10 @@ class SheetWidgetBuildData {
 
   SheetWidgetBuildData(
     this.key, {
-    this.title,
-    this.content,
-    this.navLeftStyle,
-    this.navLeftOnPressed,
-    this.safe,
+    required this.title,
+    required this.content,
+    required this.navLeftStyle,
+    required this.navLeftOnPressed,
+    required this.safe,
   });
 }

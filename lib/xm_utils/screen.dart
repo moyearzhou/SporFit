@@ -5,24 +5,24 @@ import 'package:flutter/services.dart';
 import 'package:framework/public.dart';
 import 'dart:ui' as ui show window;
 
-num xmDp(num w) => ScreenUtil().setWidth(w);
+num xmDp(num w) => ScreenUtil().setWidth(w).toDouble();
 
 /// 原尺寸.
-num xmSourceDp(num w) => w / ScreenUtil().scaleWidth;
+num xmSourceDp(num w) => w / ScreenUtil().scaleWidth.toDouble();
 
 /// 字体.
 num xmSp(num s) => ScreenUtil().setSp(s);
 
 /// 屏幕宽.
-num xmSW() => ScreenUtil.screenWidthDp;
+num xmSW() => ScreenUtil().screenWidth.toDouble();
 
 /// 屏幕高.
-num xmSH() => ScreenUtil.screenHeightDp;
+num xmSH() => ScreenUtil().screenHeight;
 
-Size xmSize(num w, num h) => Size(xmDp(w), xmDp(h));
-Size xmSize2(Size size) => Size(xmDp(size.width), xmDp(size.height));
+Size xmSize(num w, num h) => Size(xmDp(w).toDouble(), xmDp(h).toDouble());
+Size xmSize2(Size size) => Size(xmDp(size.width).toDouble(), xmDp(size.height).toDouble());
 EdgeInsets xmLTRB(num l, num t, num r, num b) =>
-    EdgeInsets.fromLTRB(xmDp(l), xmDp(t), xmDp(r), xmDp(b));
+    EdgeInsets.fromLTRB(xmDp(l).toDouble(), xmDp(t).toDouble(), xmDp(r).toDouble(), xmDp(b).toDouble());
 num xmAppBarH = xmDp(170);
 
 class Screen {

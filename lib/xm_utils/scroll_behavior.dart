@@ -13,7 +13,7 @@ class _OverScrollBehavior extends ScrollBehavior {
         showLeading: false,
         showTrailing: false,
         axisDirection: axisDirection,
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       );
     } else {
       return child;

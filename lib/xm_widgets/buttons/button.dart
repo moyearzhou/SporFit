@@ -18,32 +18,36 @@ class XMBtn {
   XMAPPStyle appStyle = XMCtlsConfig.appStyle;
 
   static Widget create({
-    double width, //按钮尺寸
-    double height,
+    double? width, //按钮尺寸
+    double? height,
     String title = '',
-    Function onPressed,
-    bool waiting,
-    XMBtnLvl lvl, //等级
+    Function? onPressed,
+    bool? waiting,
+    XMBtnLvl? lvl, //等级
     double radius = 5, //按钮圆角
     Color titleColor = Colors.black, //文字颜色
     double fontSize = 42, //字体大小
     Color backgroundColor = Colors.white,
-    Widget child,
+    Widget? child,
   }) {
     child = child ??
         Center(
           child: Text(
             title,
-            style: TextStyle(color: titleColor, fontSize: xmSp(fontSize)),
+            style: TextStyle(color: titleColor, fontSize: xmSp(fontSize).toDouble()),
           ),
         );
 
-    width = null != width ? xmDp(width) : xmDp(980);
-    height = null != height ? xmDp(height) : xmDp(120);
+    width = null != width ? xmDp(width).toDouble() : xmDp(980).toDouble();
+    height = null != height ? xmDp(height).toDouble() : xmDp(120).toDouble();
 
     return GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: onPressed,
+        onTap: () {
+          if (onPressed != null) {
+            onPressed();
+          }
+        },
         child: Container(
           width: width,
           height: height,
@@ -56,7 +60,7 @@ class XMBtn {
   }
 
   static Widget normal(String title, Function onPressed,
-      {bool waiting, double width, double height}) {
+      {bool? waiting, double? width, double? height}) {
     return create(
         title: title,
         onPressed: onPressed,
@@ -67,7 +71,7 @@ class XMBtn {
   }
 
   static warning(String title, Function onPressed,
-      {bool waiting, double width, double height}) {
+      {bool? waiting, double? width, double? height}) {
     return create(
         title: title,
         onPressed: onPressed,
@@ -78,7 +82,7 @@ class XMBtn {
   }
 
   static Widget danger(String title, Function onPressed,
-      {bool waiting, double width, double height}) {
+      {bool? waiting, double? width, double? height}) {
     return create(
         title: title,
         onPressed: onPressed,

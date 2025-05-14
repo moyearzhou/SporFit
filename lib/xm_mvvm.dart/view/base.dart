@@ -3,29 +3,29 @@ import 'package:flutter/material.dart';
 import '../../public.dart';
 
 class XMBasePage extends StatefulWidget {
-  XMBasePage({Key key}) : super(key: key);
+  XMBasePage({Key? key}) : super(key: key);
 
   @override
   XMBasePageState createState() => XMBasePageState();
 }
 
 class XMBasePageState extends State<XMBasePage> {
-  Scaffold scaffold;
-  Widget leading;
-  String title;
-  Widget titleWidget;
-  double titleSpace;
-  List<Widget> actions;
-  Widget body;
-  bool showAppBar;
-  List<Widget> footerBtns;
-  Widget bottomBar;
-  bool rtabp;
-  bool autoLeading;
-  Color scaffoldColor;
-  Color appbarColor;
-  double elevation;
-  Widget appbarBottomBar;
+  Scaffold? scaffold;
+  Widget? leading;
+  String? title;
+  Widget? titleWidget;
+  double? titleSpace;
+  List<Widget>? actions;
+  Widget? body;
+  bool? showAppBar;
+  List<Widget>? footerBtns;
+  Widget? bottomBar;
+  bool? rtabp;
+  bool? autoLeading;
+  Color? scaffoldColor;
+  Color? appbarColor;
+  double? elevation;
+  PreferredSizeWidget? appbarBottomBar;
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,10 @@ class XMBasePageState extends State<XMBasePage> {
 
     return Scaffold(
       backgroundColor: scaffoldColor ?? XMColor.themeColor,
-      resizeToAvoidBottomPadding: rtabp,
-      appBar: showAppBar
+      resizeToAvoidBottomInset: rtabp,
+      appBar: (true == showAppBar)
           ? AppBar(
-              automaticallyImplyLeading: autoLeading,
+              automaticallyImplyLeading: autoLeading ?? false,
               leading: leading,
               elevation: elevation,
               centerTitle: true,
@@ -53,8 +53,8 @@ class XMBasePageState extends State<XMBasePage> {
               title: titleWidget != null
                   ? titleWidget
                   : Text(
-                      title,
-                      style: TextStyle(fontSize: xmSp(54), color: Colors.black),
+                      title ?? '',
+                      style: TextStyle(fontSize: xmSp(54).toDouble(), color: Colors.black),
                     ),
               backgroundColor: XMColor.navColor,
               actions: actions,

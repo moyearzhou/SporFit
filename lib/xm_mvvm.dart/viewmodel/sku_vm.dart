@@ -5,7 +5,7 @@ import 'package:framework/xm_mvvm.dart/view/explore/sku.dart';
 import 'package:framework/xm_utils/toast.dart';
 
 class SKUVm {
-  SKUPageState st;
+  late SKUPageState st;
   //  **商品规格  ：
   // 款式 ： F    M
   // 颜色 ： R    G    B
@@ -75,7 +75,7 @@ class SKUVm {
   TextEditingController ctr = TextEditingController(text: '1');
 
   List tempSku = [];
-  XMRefreshWidget skuWid;
+  late XMRefreshWidget skuWid;
   SKUVm(this.st) {
     curr();
   }
@@ -115,7 +115,7 @@ class SKUVm {
     skuWid.reload();
   }
 
-  void curr({int idx = 2, List source}) {
+  void curr({int idx = 2, List? source}) {
     source = source ?? data;
     if (idx == 8) {
       tempSku = source;
@@ -139,7 +139,7 @@ class SKUVm {
   }
 
   String get showInfo {
-    Decimal minPrice;
+    late Decimal minPrice;
     Decimal maxPrice = Decimal.zero;
     Decimal amount = Decimal.zero;
 

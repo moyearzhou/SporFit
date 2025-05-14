@@ -3,20 +3,21 @@ import '../../../public.dart';
 import 'sport_data.dart';
 
 class SportPage extends StatefulWidget {
-  SportPage({Key key}) : super(key: key);
+  SportPage({Key? key}) : super(key: key);
 
   _SportPageState createState() => _SportPageState();
 }
 
-class _SportPageState extends State<SportPage> {
-  TabController tabCtr;
+class _SportPageState extends State<SportPage>  with TickerProviderStateMixin {
+  late TabController tabCtr;
   var tabs = ['现在开始', '跑步', '行走', '智能硬件', '瑜伽'];
   @override
+
   void initState() {
     super.initState();
     tabCtr = TabController(
       length: tabs.length,
-      vsync: ScrollableState(),
+      vsync: this,
     );
   }
 
@@ -73,8 +74,8 @@ class _SportPageState extends State<SportPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 trailing: Container(
-                  width: xmDp(22),
-                  height: xmDp(44),
+                  width: xmDp(22).toDouble(),
+                  height: xmDp(44).toDouble(),
                   child: Image(
                     image: AssetImage('res/imgs/comm_detail.png'),
                   ),
@@ -98,23 +99,23 @@ class _SportPageState extends State<SportPage> {
       children: <Widget>[
         _sectionView(secInfo['sectionName'], false),
         CarouselSlider(
-          viewportFraction: 1.0,
-          aspectRatio: 2.0,
-          autoPlay: false,
-          enlargeCenterPage: false,
+          // viewportFraction: 1.0,
+          // aspectRatio: 2.0,
+          // autoPlay: false,
+          // enlargeCenterPage: false,
           items: promotions.map((v) {
             var img = v['picture'];
             return new Builder(
               builder: (BuildContext context) {
                 return Container(
                   padding: EdgeInsets.fromLTRB(
-                      xmDp(30), xmDp(30), xmDp(30), xmDp(10)),
+                      xmDp(30).toDouble(), xmDp(30).toDouble(), xmDp(30).toDouble(), xmDp(10).toDouble()),
                   child: ListView(
                     padding: EdgeInsets.all(0),
                     physics: NeverScrollableScrollPhysics(),
                     children: <Widget>[
                       Container(
-                        width: xmDp(xmSW() - 10 * 2),
+                        width: xmDp(xmSW() - 10 * 2).toDouble(),
                         child: ClipRRect(
                           child: CachedNetworkImage(
                             imageUrl: img,
@@ -140,7 +141,14 @@ class _SportPageState extends State<SportPage> {
               },
             );
           }).toList(),
-          height: 280.0,
+          options: CarouselOptions(
+            height: 280.0,
+            viewportFraction: 1.0,
+            aspectRatio: 2.0,
+            autoPlay: false,
+            enlargeCenterPage: false,
+          ),
+          // height: 280.0,
         ),
         Container(
             width: Screen.width,
@@ -279,7 +287,7 @@ class _SportPageState extends State<SportPage> {
               title: Text(
             sec1['sectionName'],
             style: TextStyle(
-                fontSize: ScreenUtil().setSp(52), color: Colors.black),
+                fontSize: ScreenUtil().setSp(18), color: Colors.black),
           )),
         ),
         Container(
@@ -296,16 +304,16 @@ class _SportPageState extends State<SportPage> {
                 title: Text(
                   squad['name'],
                   style: TextStyle(
-                      fontSize: ScreenUtil().setSp(54), color: Colors.white),
+                      fontSize: ScreenUtil().setSp(18), color: Colors.white),
                 ),
                 subtitle: Text(
                   des,
                   style: TextStyle(
-                      fontSize: ScreenUtil().setSp(32), color: Colors.white),
+                      fontSize: ScreenUtil().setSp(14), color: Colors.white),
                 ),
                 trailing: Container(
-                  width: xmDp(60),
-                  height: xmDp(60),
+                  width: 24,
+                  height: 24,
                   child: Image.asset('res/imgs/explore_class_section_right.png',
                       fit: BoxFit.fill),
                 ),
@@ -447,13 +455,13 @@ class _SportPageState extends State<SportPage> {
       child: Row(
         children: <Widget>[
           SizedBox(
-            width: xmDp(28),
-            height: xmDp(78),
+            width: xmDp(28).toDouble(),
+            height: xmDp(78).toDouble(),
           ),
           Text(
             title,
             style: TextStyle(
-                fontSize: ScreenUtil().setSp(52), color: XMColor.deepGray),
+                fontSize: ScreenUtil().setSp(18), color: XMColor.deepGray),
           ),
           Expanded(
             child: Row(
@@ -474,7 +482,7 @@ class _SportPageState extends State<SportPage> {
                       : Text(''),
                 ),
                 SizedBox(
-                  width: xmDp(28),
+                  width: xmDp(28).toDouble(),
                 ),
               ],
             ),
@@ -486,7 +494,7 @@ class _SportPageState extends State<SportPage> {
 
   _grayGap() {
     return Container(
-      height: xmDp(22),
+      height: xmDp(22).toDouble(),
       color: XMColor.bgGray,
     );
   }
@@ -515,6 +523,7 @@ class _SportPageState extends State<SportPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        backgroundColor: Colors.white,
         title: Text('运动',
             style: TextStyle(
                 fontSize: 22,
@@ -522,7 +531,7 @@ class _SportPageState extends State<SportPage> {
                 fontWeight: FontWeight.w500)),
         bottom: PreferredSize(
           child: _tabBar(),
-          preferredSize: Size(xmSW(), 40),
+          preferredSize: Size(xmSW().toDouble(), 40),
         ),
         actions: <Widget>[
           Container(
@@ -570,4 +579,11 @@ class _SportPageState extends State<SportPage> {
               .toList()),
     );
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tabCtr.dispose();
+  }
+
 }

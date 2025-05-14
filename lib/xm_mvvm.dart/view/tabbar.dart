@@ -16,7 +16,7 @@ import 'plan/plan_root.dart';
 import 'sport/sport_root.dart';
 
 class XMTabbarPage extends XMBasePage {
-  XMTabbarPage({Key key}) : super(key: key);
+  XMTabbarPage({required Key key}) : super(key: key);
   @override
   _XMTabbarPageState createState() => _XMTabbarPageState();
 }
@@ -39,13 +39,22 @@ class _XMTabbarPageState extends XMBasePageState {
 
   @override
   buildBody() {
+    // return Center();
     return IndexedStack(
       children: <Widget>[
-        KeepCommRootScene(),
-        ExploreRootScene(),
-        SportPage(),
-        PlanPage(),
-        MePage(),
+        // KeepCommRootScene(),
+        // ExploreRootScene(),
+        // SportPage(),
+        // PlanPage(),
+        // MePage(),
+        // Container(),
+        // Container(),
+        // Container(),
+        Builder(builder: (_) => KeepCommRootScene()),
+        Builder(builder: (_) => ExploreRootScene()),
+        Builder(builder: (_) => SportPage()),
+        Builder(builder: (_) => PlanPage()),
+        Builder(builder: (_) => MePage()),
       ],
       index: currIdx,
     );
@@ -59,7 +68,7 @@ class _XMTabbarPageState extends XMBasePageState {
         child: Container(
           decoration: BoxDecoration(
               border: Border(
-                  top: BorderSide(width: xmDp(1), color: XMColor.contentColor),
+                  // top: BorderSide(width: 1, color: XMColor.contentColor),
                   bottom: BorderSide.none)),
           child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -79,23 +88,26 @@ class _XMTabbarPageState extends XMBasePageState {
           setState(() {});
         },
         child: Container(
-          height: xmAppBarH,
+          // height: xmAppBarH.toDouble(),
           child: Container(
-              width: xmSW() / fastInfo.length,
+            // height: 36,
+            //   width: 36,
+              // width: xmSW() / fastInfo.length,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: xmDp(19)),
+                  SizedBox(height: 8),
                   Container(
-                    height: xmDp(55),
+                    height: 18,
+                    width: 18,
                     child: getTabIcon(idx),
                   ),
-                  SizedBox(height: xmDp(16)),
+                  SizedBox(height: 8),
                   Text(
                     v,
                     style: TextStyle(
                         color:
                             idx == currIdx ? Colors.black : XMColor.grayColor,
-                        fontSize: xmSp(36)),
+                        fontSize: 12),
                   )
                 ],
               )),

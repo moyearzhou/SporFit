@@ -1,7 +1,7 @@
 library xm_public;
 
 // Vendor
-export 'package:flutter_screenutil/screenutil.dart';
+export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:common_utils/common_utils.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:transparent_image/transparent_image.dart';

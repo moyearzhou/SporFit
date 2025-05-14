@@ -6,7 +6,8 @@ import '../public.dart';
 
 class XMWebSocketManager {
   XMWebSocketManager._();
-  static XMWebSocketManager _manager;
+
+  static late XMWebSocketManager _manager;
   factory XMWebSocketManager() {
     if (_manager == null) {
       _manager = XMWebSocketManager._();
@@ -14,10 +15,10 @@ class XMWebSocketManager {
     return _manager;
   }
 
-  WebSocket _webSocket;
+  late WebSocket _webSocket;
   int _mktWsId = 0;
-  Timer _pingTimer;
-  initWebSocket({Function success, Function failure}) async {
+  late Timer _pingTimer;
+  initWebSocket({Function? success, Function? failure}) async {
     var path = '';
     try {
       _webSocket = await WebSocket.connect(path);
@@ -36,7 +37,9 @@ class XMWebSocketManager {
           print("WSConn Closed !!!");
         });
       } else {
-        failure();
+        if (null != failure) {
+          failure();
+        }
         print('WS UNOpen !!!');
         return;
       }
@@ -86,7 +89,7 @@ class XMWebSocketManager {
     }
   }
 
-  void _sendMessage(String method, {dynamic params, int diyId}) {
+  void _sendMessage(String method, {dynamic params, int? diyId}) {
     try {
       if (_webSocket.readyState == WebSocket.open) {
         Map data = {};
@@ -95,8 +98,7 @@ class XMWebSocketManager {
         data[XMWSConst.params] = params ?? [];
         if (method == XMWSConst.apiPing) {
           print('Ping - ' +
-              DateUtil.formatDateTime(DateTime.now().toString(),
-                  DateFormat.HOUR_MINUTE_SECOND, '/', ':'));
+              DateUtil.formatDateStr(DateTime.now().toString()));
         } else {
           print('ID:${data[XMWSConst.id]} -- Methed:$method \n Params:$params');
         }

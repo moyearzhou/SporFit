@@ -5,13 +5,13 @@ import '../../../public.dart';
 import 'plan_data.dart';
 
 class PlanPage extends StatefulWidget {
-  PlanPage({Key key}) : super(key: key);
+  PlanPage({Key? key}) : super(key: key);
 
   _PlanPageState createState() => _PlanPageState();
 }
 
 class _PlanPageState extends State<PlanPage> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
@@ -25,7 +25,7 @@ class _PlanPageState extends State<PlanPage> {
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         appBar: AppBar(
-          brightness: Brightness.light,
+          // brightness: Brightness.light,
           elevation: 0.0,
           backgroundColor: Colors.white,
           centerTitle: false,
@@ -182,7 +182,7 @@ class _PlanPageState extends State<PlanPage> {
 
     for (var i = 1; i <= days; i++) {
       DateTime dt = DateTime(currDt.year, currDt.month, i);
-      String weekday = DateUtil.getZHWeekDay(dt);
+      String weekday = getZHWeekDay(dt);
       Widget item = Container(
         width: itemWidth,
         child: Column(
@@ -465,10 +465,30 @@ class _PlanPageState extends State<PlanPage> {
   //   );
   // }
 
+  String getZHWeekDay(DateTime date) {
+    final List<String> weekDays = [
+      '星期日',
+      '星期一',
+      '星期二',
+      '星期三',
+      '星期四',
+      '星期五',
+      '星期六'
+    ];
+    return weekDays[date.weekday % 7];
+  }
+
   _grayGap() {
     return Container(
       height: 11,
       color: XMColor.bgGray,
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _scrollController.dispose();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class XMRefreshBaseWidget extends StatefulWidget {
-  XMRefreshBaseWidget({Key key})
+  XMRefreshBaseWidget({Key? key})
       : super(key: key is GlobalKey ? key : GlobalKey());
 
   void reload() {
@@ -9,7 +9,7 @@ abstract class XMRefreshBaseWidget extends StatefulWidget {
       return;
     }
     final aKey = key as GlobalKey;
-    State<StatefulWidget> curSt = aKey.currentState;
+    State<StatefulWidget>? curSt = aKey.currentState;
     // ignore: invalid_use_of_protected_member
     if (null != curSt) curSt.setState(() {});
   }
@@ -18,8 +18,8 @@ abstract class XMRefreshBaseWidget extends StatefulWidget {
 // ignore: must_be_immutable
 class XMRefreshWidget extends XMRefreshBaseWidget {
   final Widget Function(BuildContext cntext) builder;
-  Key reloadKey;
-  XMRefreshWidget({Key key, @required this.builder})
+  Key? reloadKey;
+  XMRefreshWidget({Key? key, required this.builder})
       : assert(builder != null),
         super(key: key) {
     this.reloadKey = key;

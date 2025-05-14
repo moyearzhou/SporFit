@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 final xmNavGK = new GlobalKey<NavigatorState>();
-final NavigatorState xmNav = xmNavGK.currentState;
+final NavigatorState xmNav = xmNavGK.currentState!;
 
 Future<dynamic> xmPush(Widget page, {bool root = false}) {
   Route route = CupertinoPageRoute(
@@ -12,7 +12,7 @@ Future<dynamic> xmPush(Widget page, {bool root = false}) {
   return xmNav.push(route);
 }
 
-xmPop<T extends Object>([T result]) {
+xmPop<T extends Object>([T? result]) {
   xmNav.pop(result);
 }
 

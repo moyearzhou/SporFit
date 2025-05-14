@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PushTestScene extends StatefulWidget {
-  PushTestScene({Key key}) : super(key: key);
+  PushTestScene({required Key key}) : super(key: key);
   @override
   PushTestSceneState createState() => PushTestSceneState();
 }

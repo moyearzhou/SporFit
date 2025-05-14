@@ -14,13 +14,13 @@ import 'package:framework/xm_mvvm.dart/viewmodel/sku_vm.dart';
 import 'package:framework/xm_utils/toast.dart';
 
 class SKUPage extends XMBasePage {
-  SKUPage({Key key}) : super(key: key);
+  SKUPage({Key? key}) : super(key: key);
   @override
   SKUPageState createState() => SKUPageState();
 }
 
 class SKUPageState extends XMBasePageState {
-  SKUVm vm;
+  late SKUVm vm;
   @override
   void initState() {
     super.initState();
@@ -40,7 +40,7 @@ class SKUPageState extends XMBasePageState {
   @override
   buildBody() {
     return Container(
-      width: xmSW(),
+      width: xmSW().toDouble(),
       child: ListView(
         padding: EdgeInsets.all(0),
         children: [
@@ -55,7 +55,7 @@ class SKUPageState extends XMBasePageState {
 
   Widget bottom() {
     return Container(
-        height: xmDp(170),
+        height: xmDp(170).toDouble(),
         child: Row(
           children: <Widget>[
             Expanded(
@@ -76,7 +76,7 @@ class SKUPageState extends XMBasePageState {
                     ),
                     Image.asset(
                       imgPath('kf'),
-                      width: xmDp(70),
+                      width: xmDp(70).toDouble(),
                       color: Color(0xff3c3743),
                     ),
                     SizedBox(height: 3),
@@ -104,7 +104,7 @@ class SKUPageState extends XMBasePageState {
                     ),
                     Image.asset(
                       imgPath('cart'),
-                      width: xmDp(70),
+                      width: xmDp(70).toDouble(),
                       color: Color(0xff3c3743),
                     ),
                     SizedBox(height: 3),
@@ -115,7 +115,7 @@ class SKUPageState extends XMBasePageState {
               ),
             ),
             XMBtn.create(
-              width: xmSourceDp(xmSW() / 3),
+              width: xmSourceDp(xmSW() / 3).toDouble(),
               height: 170,
               title: '加入购物车',
               fontSize: 48,
@@ -127,7 +127,7 @@ class SKUPageState extends XMBasePageState {
               },
             ),
             XMBtn.create(
-              width: xmSourceDp(xmSW() / 3),
+              width: xmSourceDp(xmSW() / 3).toDouble(),
               height: 170,
               title: '立即购买',
               fontSize: 48,
@@ -144,10 +144,10 @@ class SKUPageState extends XMBasePageState {
 
   Widget skuView(int idx, List sku) {
     return Container(
-        margin: EdgeInsets.only(top: xmDp(16), bottom: xmDp(16)),
+        margin: EdgeInsets.only(top: xmDp(16).toDouble(),  bottom: xmDp(16).toDouble()),
         child: Wrap(
-            spacing: xmDp(30),
-            runSpacing: xmDp(30),
+            spacing: xmDp(30).toDouble(),
+            runSpacing: xmDp(30).toDouble(),
             alignment: WrapAlignment.start,
             children: sku.map(
               (v) {
@@ -167,13 +167,13 @@ class SKUPageState extends XMBasePageState {
                                   ? Color(0xff5cbc86)
                                   : Colors.transparent),
                           borderRadius:
-                              BorderRadius.all(Radius.circular(xmDp(40)))),
+                              BorderRadius.all(Radius.circular(xmDp(40).toDouble(),))),
                       padding: EdgeInsets.fromLTRB(
-                          xmDp(60), xmDp(10), xmDp(60), xmDp(10)),
+                          xmDp(60).toDouble(),  xmDp(10).toDouble(),  xmDp(60).toDouble(),  xmDp(10).toDouble() ),
                       child: Text(
                         v,
                         style: TextStyle(
-                            fontSize: xmSp(36),
+                            fontSize: xmSp(36).toDouble(),
                             color:
                                 vm.has(idx, tag) ? Colors.black : Colors.grey),
                       ),
@@ -184,15 +184,17 @@ class SKUPageState extends XMBasePageState {
 
 //bannber图
   Widget bannberWid() {
-    double bannerH = xmDp(576);
+    double bannerH = xmDp(576).toDouble();
     if (vm.banners.isEmpty) return SizedBox();
     return Stack(
       children: <Widget>[
         CarouselSlider(
-          viewportFraction: 1.0,
-          aspectRatio: 1,
-          autoPlay: true,
-          enlargeCenterPage: false,
+          options: CarouselOptions(
+            viewportFraction: 1.0,
+            aspectRatio: 1,
+            autoPlay: true,
+            enlargeCenterPage: false,
+          ),
           items: vm.banners.map(
             (banner) {
               String url = banner['url'];
@@ -213,7 +215,7 @@ class SKUPageState extends XMBasePageState {
                           }
                         },
                         child: Container(
-                          width: xmSW(),
+                          width: xmSW().toDouble(),
                           height: bannerH,
                           child: ClipRRect(
                             child: CachedNetworkImage(
@@ -290,17 +292,17 @@ class SKUPageState extends XMBasePageState {
           },
           child: CircleAvatar(
             backgroundColor: Colors.grey[300],
-            radius: xmDp(35),
+            radius: xmDp(45).toDouble(),
             child: Image.asset(
               imgPath('count-'),
               color: Colors.white,
-              width: xmDp(35),
-              height: xmDp(35),
+              width: xmDp(35).toDouble(),
+              height: xmDp(35).toDouble(),
             ),
           ),
         ),
         Container(
-          width: xmDp(140),
+          width: xmDp(140).toDouble(),
           height: 100,
           child: Center(
               child: TextField(
@@ -310,7 +312,7 @@ class SKUPageState extends XMBasePageState {
             textAlignVertical: TextAlignVertical.center,
             style: TextStyle(
               color: XMColor.grayColor,
-              fontSize: xmSp(46),
+              fontSize: xmSp(46).toDouble(),
             ),
             decoration: InputDecoration(
               contentPadding: EdgeInsets.only(bottom: 14),
@@ -328,12 +330,12 @@ class SKUPageState extends XMBasePageState {
           },
           child: CircleAvatar(
             backgroundColor: Colors.grey[300],
-            radius: xmDp(35),
+            radius: xmDp(35).toDouble(),
             child: Image.asset(
               imgPath('count+'),
               color: Colors.white,
-              width: xmDp(35),
-              height: xmDp(35),
+              width: xmDp(35).toDouble(),
+              height: xmDp(35).toDouble(),
             ),
           ),
         ),
@@ -400,7 +402,7 @@ class SKUPageState extends XMBasePageState {
                             text: TextSpan(
                               text: temp0[0] + ' : ',
                               style: TextStyle(
-                                fontSize: xmSp(40),
+                                fontSize: xmSp(40).toDouble(),
                                 color: Colors.black,
                               ),
                               children: <TextSpan>[
@@ -408,7 +410,7 @@ class SKUPageState extends XMBasePageState {
                                   text: temp0[1],
                                   style: TextStyle(
                                     color: Color(0xff5cbc86),
-                                    fontSize: xmSp(40),
+                                    fontSize: xmSp(40).toDouble(),
                                   ),
                                 ),
                               ],
@@ -419,7 +421,7 @@ class SKUPageState extends XMBasePageState {
                             text: TextSpan(
                               text: temp1[0] + ' : ',
                               style: TextStyle(
-                                fontSize: xmSp(40),
+                                fontSize: xmSp(40).toDouble(),
                                 color: Colors.black,
                               ),
                               children: <TextSpan>[
@@ -427,7 +429,7 @@ class SKUPageState extends XMBasePageState {
                                   text: temp1[1],
                                   style: TextStyle(
                                     color: Color(0xff5cbc86),
-                                    fontSize: xmSp(40),
+                                    fontSize: xmSp(40).toDouble(),
                                   ),
                                 ),
                               ],
@@ -450,7 +452,7 @@ class SKUPageState extends XMBasePageState {
                         },
                         child: Image.asset(
                           imgPath('icon_evaluation_close@3x'),
-                          width: xmDp(50),
+                          width: xmDp(50).toDouble(),
                           color: XMColor.gray,
                         ),
                       ),
@@ -459,7 +461,7 @@ class SKUPageState extends XMBasePageState {
                 }
                 if (sku is String) {
                   return Row(children: <Widget>[
-                    SizedBox(height: xmDp(130)),
+                    SizedBox(height: xmDp(130).toDouble(),),
                     XMText.create(sku, ftSize: 42)
                   ]);
                 }

@@ -3,13 +3,13 @@ import '../public.dart';
 
 class XMText {
   static Widget create(String text,
-      {double ftSize = 48,
+      {double ftSize = 18,
       Color color = Colors.black,
       Color bgColor = Colors.transparent,
       FontWeight fontWeight = FontWeight.normal,
-      TextOverflow overflow,
-      TextAlign algin,
-      int maxLines,
+        TextOverflow? overflow,
+        TextAlign? algin,
+       int? maxLines,
       TextDecoration decoration = TextDecoration.none}) {
     return Text(
       text ?? '',
@@ -18,7 +18,7 @@ class XMText {
       maxLines: maxLines,
       style: TextStyle(
           color: color,
-          fontSize: xmDp(ftSize),
+          fontSize: xmDp(ftSize).toDouble(),
           backgroundColor: bgColor,
           fontWeight: fontWeight,
           decoration: decoration),

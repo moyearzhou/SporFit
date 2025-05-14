@@ -33,7 +33,7 @@ void main() async {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
           ),
-          home: XMTabbarPage()),
+          home: XMTabbarPage(key: UniqueKey(),)),
     );
   });
 }

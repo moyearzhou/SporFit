@@ -10,7 +10,7 @@ class XMSpUtil {
 
   static String _lmDBVersion = '_lmDBVersion';
 
-  static Future<bool> changeDBVersion(int version) async {
+  static Future<Future<bool>?> changeDBVersion(int version) async {
     return (await SpUtil.getInstance()).putInt(_lmDBVersion, version);
   }
 
@@ -25,7 +25,7 @@ class XMSpUtil {
   }
 
   /// ----------------------------------------------------------------------
-  static Future<void> saveConfig(String configJson) async {
+  static Future<bool?> saveConfig(String configJson) async {
     return await (await SpUtil.getInstance()).putString(_config, configJson);
   }
 
@@ -48,48 +48,48 @@ class XMSpUtil {
     return envs;
   }
 
-  static Future<bool> addLMEnv(XMEnvModel env) async {
+  static Future<bool?> addLMEnv(XMEnvModel env) async {
     SpUtil util = await SpUtil.getInstance();
     var list = util.getStringList(_env) ?? [];
     list.add(jsonEncode(env.toJson()));
     return await util.putStringList(_env, list);
   }
 
-  static Future<bool> delLMEnv(int idx) async {
+  static Future<bool?> delLMEnv(int idx) async {
     SpUtil util = await SpUtil.getInstance();
-    List<String> list = util.getStringList(_env);
-    list.removeAt(idx);
-    return await util.putStringList(_env, list);
+    List<String>? list = util.getStringList(_env);
+    list?.removeAt(idx);
+    return await util.putStringList(_env, list!);
   }
 
-  static Future<bool> updateLMEnv(int idx, XMEnvModel env) async {
+  static Future<bool?> updateLMEnv(int idx, XMEnvModel env) async {
     SpUtil util = await SpUtil.getInstance();
-    List<String> list = util.getStringList(_env);
-    list.replaceRange(idx, idx + 1, [jsonEncode(env.toJson())]);
-    return await util.putStringList(_env, list);
+    List<String>? list = util.getStringList(_env);
+    list?.replaceRange(idx, idx + 1, [jsonEncode(env.toJson())]);
+    return await util.putStringList(_env, list!);
   }
 
   static Future<bool> changeEnv(int idx) async {
     SpUtil util = await SpUtil.getInstance();
-    List<String> list = util.getStringList(_env);
+    List<String> list = util.getStringList(_env) ?? [];
     for (int i = 0; i < list.length; i++) {
       var obj = XMEnvModel.fromJson(jsonDecode(list[i]));
       obj.used = idx == i ? '1' : '0';
       list.replaceRange(i, i + 1, [jsonEncode(obj.toJson())]);
       XMAppGlobal.lmEnv = obj;
     }
-    return await util.putStringList(_env, list);
+    return await util.putStringList(_env, list) ?? false;
   }
 }
 
 /// 用来做shared_preferences的存储
 class SpUtil {
-  static SpUtil _instance;
+  static late SpUtil _instance;
   static Future<SpUtil> get instance async {
     return await getInstance();
   }
 
-  static SharedPreferences _spf;
+  static late SharedPreferences _spf;
 
   SpUtil._();
 
@@ -114,11 +114,11 @@ class SpUtil {
 
   // 判断是否存在数据
   bool hasKey(String key) {
-    Set keys = getKeys();
+    Set keys = getKeys() ?? Set();
     return keys.contains(key);
   }
 
-  Set<String> getKeys() {
+  Set<String>? getKeys() {
     if (_beforeCheck()) return null;
     return _spf.getKeys();
   }
@@ -133,46 +133,46 @@ class SpUtil {
     return _spf.getString(key);
   }
 
-  Future<bool> putString(String key, String value) {
+  Future<bool>? putString(String key, String value) {
     if (_beforeCheck()) return null;
     return _spf.setString(key, value);
   }
 
-  bool getBool(String key) {
+  bool? getBool(String key) {
     if (_beforeCheck()) return null;
     return _spf.getBool(key);
   }
 
-  Future<bool> putBool(String key, bool value) {
+  Future<bool>? putBool(String key, bool value) {
     if (_beforeCheck()) return null;
     return _spf.setBool(key, value);
   }
 
-  int getInt(String key) {
+  int? getInt(String key) {
     if (_beforeCheck()) return null;
     return _spf.getInt(key);
   }
 
-  Future<bool> putInt(String key, int value) {
+  Future<bool>? putInt(String key, int value) {
     if (_beforeCheck()) return null;
     return _spf.setInt(key, value);
   }
 
-  double getDouble(String key) {
+  double? getDouble(String key) {
     if (_beforeCheck()) return null;
     return _spf.getDouble(key);
   }
 
-  Future<bool> putDouble(String key, double value) {
+  Future<bool>? putDouble(String key, double value) {
     if (_beforeCheck()) return null;
     return _spf.setDouble(key, value);
   }
 
-  List<String> getStringList(String key) {
+  List<String>? getStringList(String key) {
     return _spf.getStringList(key);
   }
 
-  Future<bool> putStringList(String key, List<String> value) {
+  Future<bool>? putStringList(String key, List<String> value) {
     if (_beforeCheck()) return null;
     return _spf.setStringList(key, value);
   }
@@ -182,12 +182,12 @@ class SpUtil {
     return _spf.get(key);
   }
 
-  Future<bool> remove(String key) {
+  Future<bool>? remove(String key) {
     if (_beforeCheck()) return null;
     return _spf.remove(key);
   }
 
-  Future<bool> clear() {
+  Future<bool>? clear() {
     if (_beforeCheck()) return null;
     return _spf.clear();
   }

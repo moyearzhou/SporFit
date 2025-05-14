@@ -3,7 +3,7 @@ import 'package:framework/xm_mvvm.dart/view/explore/sku.dart';
 import 'package:framework/xm_utils/router.dart';
 
 class HomeVm {
-  TabController tabCtr;
+  late TabController tabCtr;
   List list = [
     [
       'Widgets',

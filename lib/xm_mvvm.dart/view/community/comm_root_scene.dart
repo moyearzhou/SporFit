@@ -1,6 +1,6 @@
+import 'package:easy_refresh/easy_refresh.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:framework/xm_mvvm.dart/model/author.dart';
 import 'package:framework/xm_mvvm.dart/model/entry.dart';
 import 'package:framework/xm_mvvm.dart/model/entrys.dart';
@@ -15,28 +15,33 @@ class KeepCommRootScene extends StatefulWidget {
   KeepCommRootSceneState createState() => KeepCommRootSceneState();
 }
 
-class KeepCommRootSceneState extends State<KeepCommRootScene> {
+class KeepCommRootSceneState extends State<KeepCommRootScene> with TickerProviderStateMixin {
   bool _showCancel = false;
-  TabController tabCtr;
+  late TabController tabCtr;
   var tabs = ['热门', '关注', '话题', '同城'];
   TextEditingController searchCtr = TextEditingController();
 
   _searchBarWid() {
     return Container(
-      width: xmDp(972),
-      height: xmDp(90),
+      // width: xmDp(972).toDouble(),
+      // height: ,
+      padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
       child: TextField(
         // focusNode: focusNode,
         controller: searchCtr, textInputAction: TextInputAction.search,
         decoration: InputDecoration(
             fillColor: XMColor.contentColor,
             filled: true,
-            contentPadding: EdgeInsets.all(2),
+            contentPadding: EdgeInsets.all(4),
             hintText: '搜索',
-            hintStyle: TextStyle(color: XMColor.grayColor, fontSize: xmSp(48)),
-            prefixIcon: Image.asset('res/imgs/comm_search.png'),
+            hintStyle: TextStyle(color: XMColor.grayColor, fontSize: 16),
+            prefixIcon: Container(
+                height: 18,
+                width: 18,
+                child: Image.asset('res/imgs/comm_search.png')
+            ),
             prefixIconConstraints:
-                BoxConstraints(minWidth: xmDp(113), maxHeight: xmDp(51)),
+                BoxConstraints(minWidth: 56, maxHeight: 36),
             suffixIcon: searchCtr.text.length > 0
                 ? GestureDetector(
                     behavior: HitTestBehavior.opaque,
@@ -50,7 +55,7 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
                 : SizedBox(),
             border: OutlineInputBorder(
               borderSide: BorderSide.none,
-              borderRadius: BorderRadius.circular(xmDp(50)),
+              borderRadius: BorderRadius.circular(45),
             )),
         onTap: () {
           setState(() {
@@ -61,7 +66,7 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
           Toast.show('搜个毛线啊，没有接口');
           _showCancel = false;
         },
-        style: TextStyle(color: Colors.black, fontSize: xmSp(48)),
+        style: TextStyle(color: Colors.black, fontSize: 14),
         maxLines: 1,
         onChanged: (v) {
           setState(() {});
@@ -77,6 +82,8 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
   @override
   void dispose() {
     // 资源释放
+    searchCtr.dispose();
+    tabCtr.dispose();
     super.dispose();
   }
 
@@ -85,19 +92,22 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
     super.initState();
     tabCtr = TabController(
       length: tabs.length,
-      vsync: ScrollableState(),
+      vsync: this,
     );
     // 首次拉取数据
     _fetchData();
   }
 
   Future<void> _fetchData() async {
-    Hot hot = await Z6Srv.queryHot(_position.toString(), '瑜伽');
+    Hot? hot = await Z6Srv.queryHot(_position.toString(), '瑜伽');
+    if (!mounted) return;
     setState(() {
       if (_position == 0) {
         posts.clear();
       }
-      posts.addAll(hot.data.items);
+      if (hot != null) {
+        posts.addAll(hot.data!.items!);
+      }
     });
   }
 
@@ -131,6 +141,26 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
       child: SafeArea(
         top: false,
         child: EasyRefresh(
+          header: ClassicHeader(
+              dragText: '下拉刷新',
+              armedText: '松开刷新',
+              readyText: '正在刷新',
+              processingText: '正在刷新',
+              processedText: '刷新成功',
+              noMoreText: '没有更多了',
+              failedText: '刷新失败',
+              messageText: '上次更新: %T'
+          ),
+          footer: ClassicFooter(
+              dragText: '上拉加载',
+              armedText: '释放加载',
+              readyText: '正在加载',
+              processingText: '正在加载',
+              processedText: '加载成功',
+              noMoreText: '没有更多了',
+              failedText: '加载失败',
+              messageText: '上次更新: %T'
+          ),
           child: _gridView(),
           onRefresh: _refresh,
           onLoad: _fetchData,
@@ -140,7 +170,8 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
   }
 
   Widget _gridView() {
-    return StaggeredGridView.countBuilder(
+
+    return MasonryGridView.count(
         padding: EdgeInsets.all(0),
         itemCount: posts.length,
         primary: false,
@@ -177,7 +208,8 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
             isVip: idx % 3 == 0 ? true : false,
           );
         },
-        staggeredTileBuilder: (index) => StaggeredTile.fit(2));
+        // staggeredTileBuilder: (index) => StaggeredTile.fit(2)
+    );
   }
 
   Widget _tabBarView() {
@@ -206,20 +238,20 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        backgroundColor: Colors.white,
         title: _searchBarWid(),
         bottom: PreferredSize(
           child: Container(
             child: _tabBar(),
           ),
-          preferredSize: Size(xmSW(), 40),
+          preferredSize: Size(xmSW().toDouble(), 40),
         ),
         actions: <Widget>[
           _showCancel
               ? Container(
-                  width: 40,
-                  height: 20,
-                  child: FlatButton(
-                    padding: EdgeInsets.all(0),
+                  // width: 40,
+                  // height: 24,
+                  child: TextButton(
                     onPressed: () {
                       searchCtr.clear();
                       FocusScope.of(context).requestFocus(FocusNode());
@@ -229,6 +261,7 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
                     },
                     child: XMText.create(
                       '取消',
+                      ftSize: 14,
                       color: Colors.green,
                     ),
                   ),
@@ -241,11 +274,15 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
                     Toast.show('添加好友');
                   },
                 ),
-          _showCancel ? SizedBox(width: 10) : Text('')
+          _showCancel ? SizedBox(width: 10) : Text(''),
+          SizedBox(width: 10)
+
         ],
       ),
       body: _tabBarView(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         onPressed: () {
           commingSoon();
         },
@@ -255,4 +292,6 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> {
       ),
     );
   }
+
+
 }
