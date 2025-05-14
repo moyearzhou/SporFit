@@ -267,7 +267,7 @@ class KeepCommRootSceneState extends State<KeepCommRootScene> with TickerProvide
                   ),
                 )
               : IconButton(
-                  icon: new Icon(Icons.person_add),
+                  icon: new Icon(Icons.person_add_outlined),
                   color: Colors.grey,
                   iconSize: 22.0,
                   onPressed: () {

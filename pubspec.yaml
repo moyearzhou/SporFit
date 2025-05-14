@@ -35,7 +35,7 @@ dependencies:
   json_annotation: 4.9.0 #序/反序列化
   analyzer: 6.8.0 #序/反序列化
   common_utils: 2.1.0 #常用工具
-  permission_handler: #系统权限
+  permission_handler: 11.1.0 #系统权限
   image_gallery_saver: #保存图片 
   barcode_scan2: 4.5.1 #二维码扫描
   transparent_image :  #展位图片
