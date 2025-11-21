@@ -22,7 +22,8 @@ class XMTabbarPage extends XMBasePage {
 }
 
 class _XMTabbarPageState extends XMBasePageState {
-  List<String> fastInfo = ['社区', '探索', '运动', '计划', '我'];
+  List<String> fastInfo = ['探索', '运动', '计划', '我'];
+
   int currIdx = 0;
   @override
   void initState() {
@@ -50,7 +51,7 @@ class _XMTabbarPageState extends XMBasePageState {
         // Container(),
         // Container(),
         // Container(),
-        Builder(builder: (_) => KeepCommRootScene()),
+        // Builder(builder: (_) => KeepCommRootScene()),
         Builder(builder: (_) => ExploreRootScene()),
         Builder(builder: (_) => SportPage()),
         Builder(builder: (_) => PlanPage()),
