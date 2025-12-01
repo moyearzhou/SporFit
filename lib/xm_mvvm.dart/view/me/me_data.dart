@@ -225,14 +225,14 @@ Map meData = {
           "notify": false,
           "notifyId": ""
         },
-        {
-          "type": "DRAFT",
-          "name": "草稿箱",
-          "schema": "keep://draft_box",
-          "icon":
-              "https://static1.keepcdn.com/2019/05/08/18/1557309970018_72x72.png",
-          "notify": true
-        },
+        // {
+        //   "type": "DRAFT",
+        //   "name": "草稿箱",
+        //   "schema": "keep://draft_box",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/05/08/18/1557309970018_72x72.png",
+        //   "notify": true
+        // },
         {
           "type": "BODYCHECK",
           "name": "身体测试",
@@ -242,33 +242,33 @@ Map meData = {
           "notify": false,
           "notifyId": ""
         },
-        {
-          "type": "KEEPLAND",
-          "name": "我的 Keepland",
-          "schema": "https://keepland.gotokeep.com/mine",
-          "icon":
-              "https://static1.keepcdn.com/2019/03/18/17/1552900602263_72x72.png",
-          "notify": false,
-          "notifyId": ""
-        },
-        {
-          "type": "WALLET",
-          "name": "我的钱包",
-          "text": "你有 1 张新优惠券",
-          "schema": "https://mo.gotokeep.com/wallet/new_wallet",
-          "icon":
-              "https://static1.keepcdn.com/2019/03/18/17/1552900622007_72x72.png",
-          "notify": true,
-          "notifyId": "578445017b2a7a3a051cc112_coupon_1562050491383"
-        },
-        {
-          "type": "ORDER",
-          "name": "我的订单",
-          "schema": "keep://purchase_history",
-          "icon":
-              "https://static1.keepcdn.com/2019/03/18/17/1552900645292_72x72.png",
-          "notify": false
-        },
+        // {
+        //   "type": "KEEPLAND",
+        //   "name": "我的 Keepland",
+        //   "schema": "https://keepland.gotokeep.com/mine",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/03/18/17/1552900602263_72x72.png",
+        //   "notify": false,
+        //   "notifyId": ""
+        // },
+        // {
+        //   "type": "WALLET",
+        //   "name": "我的钱包",
+        //   "text": "你有 1 张新优惠券",
+        //   "schema": "https://mo.gotokeep.com/wallet/new_wallet",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/03/18/17/1552900622007_72x72.png",
+        //   "notify": true,
+        //   "notifyId": "578445017b2a7a3a051cc112_coupon_1562050491383"
+        // },
+        // {
+        //   "type": "ORDER",
+        //   "name": "我的订单",
+        //   "schema": "keep://purchase_history",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/03/18/17/1552900645292_72x72.png",
+        //   "notify": false
+        // },
         {
           "type": "CART",
           "name": "我的购物车",
@@ -279,15 +279,15 @@ Map meData = {
               "https://static1.keepcdn.com/2019/03/18/17/1552900662956_72x72.png",
           "notify": false
         },
-        {
-          "type": "KSTAR",
-          "name": "我的卡路里工厂",
-          "schema": "https://m.gotokeep.com/glue-web?fullscreen=1",
-          "icon":
-              "https://static1.keepcdn.com/2019/05/13/20/1557749903421_72x72.png",
-          "notify": true,
-          "notifyId": "1557394038"
-        },
+        // {
+        //   "type": "KSTAR",
+        //   "name": "我的卡路里工厂",
+        //   "schema": "https://m.gotokeep.com/glue-web?fullscreen=1",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/05/13/20/1557749903421_72x72.png",
+        //   "notify": true,
+        //   "notifyId": "1557394038"
+        // },
         // {
         //   "type": "ACTIVITY",
         //   "name": "领取“现男友”奖品",

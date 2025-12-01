@@ -25,7 +25,6 @@ class _PlanPageState extends State<PlanPage> {
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         appBar: AppBar(
-          // brightness: Brightness.light,
           elevation: 0.0,
           backgroundColor: Colors.white,
           centerTitle: false,
@@ -58,13 +57,16 @@ class _PlanPageState extends State<PlanPage> {
             )
           ],
         ),
-        body: ListView(
-          children: <Widget>[
-            _suitInprogress(),
-            _grayGap(),
-            _trainContent(),
-            _grayGap()
-          ],
+        body: Container(
+          color: XMColor.bgGray,
+          child: ListView(
+            children: <Widget>[
+              _suitInprogress(),
+              _grayGap(),
+              _trainContent(),
+              _grayGap()
+            ],
+          ),
         ),
       ),
     );
@@ -421,49 +423,6 @@ class _PlanPageState extends State<PlanPage> {
       ),
     );
   }
-
-  // _sectionView(title, bool showDetail) {
-  //   return InkWell(
-  //     onTap: () {},
-  //     child: Row(
-  //       children: <Widget>[
-  //         SizedBox(
-  //           width: xmDp(28),
-  //           height: xmDp(78),
-  //         ),
-  //         Text(
-  //           title,
-  //           style: TextStyle(
-  //               fontSize: ScreenUtil().setSp(28), color: XMColor.deepGray),
-  //         ),
-  //         Expanded(
-  //           child: Row(
-  //             mainAxisAlignment: MainAxisAlignment.end,
-  //             children: <Widget>[
-  //               Container(
-  //                 child: showDetail
-  //                     ? Container(
-  //                         padding: EdgeInsets.fromLTRB(8, 5, 8, 5),
-  //                         decoration: BoxDecoration(
-  //                             color: Color(0xff5fc48f),
-  //                             borderRadius: BorderRadius.circular(12)),
-  //                         child: Text(
-  //                           '发现课程',
-  //                           style: TextStyle(fontSize: 10, color: Colors.white),
-  //                         ),
-  //                       )
-  //                     : Text(''),
-  //               ),
-  //               SizedBox(
-  //                 width: xmDp(28),
-  //               ),
-  //             ],
-  //           ),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
 
   String getZHWeekDay(DateTime date) {
     final List<String> weekDays = [
