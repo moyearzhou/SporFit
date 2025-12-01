@@ -16,7 +16,7 @@ import 'logs_Interceptors.dart';
  */
 class Z6HttpManager {
   /// global dio object
-  static late Dio dio;
+  static Dio dio = createInstance();
 
   /// default options
   static const String API_PREFIX = 'https://api.gotokeep.com/feed/v1/';

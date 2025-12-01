@@ -24,7 +24,7 @@ class _ExploreRootSceneState extends State<ExploreRootScene> with TickerProvider
   late XMRefreshWidget seckillWid;
   late DateTime seckillDt;
   var left = 0.0;
-  var tabs = ['课程与挑战', '运动商城', '健康轻食'];
+  var tabs = ['课程与挑战', '健康轻食'];
   var classScInfo = [
     {
       'icon':
@@ -212,6 +212,7 @@ class _ExploreRootSceneState extends State<ExploreRootScene> with TickerProvider
       indicatorColor: XMColor.deepGray,
       indicatorSize: TabBarIndicatorSize.label,
       indicatorWeight: 2,
+      dividerHeight: 0,
       tabs: tabs
           .map(
             (e) => Tab(text: e),
@@ -1082,7 +1083,7 @@ class _ExploreRootSceneState extends State<ExploreRootScene> with TickerProvider
       body: TabBarView(controller: tabCtr, children: [
         _classView(),
         _shopView(),
-        XMEmpty.show('CommingSoon', iconImgPath: imgPath('smile')),
+        // _shopView(),
       ]),
     );
   }

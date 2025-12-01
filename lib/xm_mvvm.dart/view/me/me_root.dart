@@ -238,6 +238,7 @@ class _MePageState extends State<MePage> {
     );
   }
 
+
   _mySportData() {
     return Container(
       decoration: BoxDecoration(
@@ -322,6 +323,7 @@ class _MePageState extends State<MePage> {
     );
   }
 
+  /// 我的运动数据
   _myBodyData() {
     return Container(
       decoration: BoxDecoration(
@@ -401,6 +403,7 @@ class _MePageState extends State<MePage> {
     );
   }
 
+  // 我的列表
   _myList() {
     List list = meData['data']['tabs'][0];
     return Column(

@@ -509,6 +509,7 @@ class _SportPageState extends State<SportPage>  with TickerProviderStateMixin {
       labelColor: XMColor.darkGray,
       indicatorSize: TabBarIndicatorSize.label,
       indicatorWeight: 2,
+      dividerHeight: 0,
       indicatorPadding: EdgeInsets.fromLTRB(8, 0, 8, 5),
       tabs: tabs
           .map(
