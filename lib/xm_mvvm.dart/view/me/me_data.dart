@@ -288,16 +288,16 @@ Map meData = {
           "notify": true,
           "notifyId": "1557394038"
         },
-        {
-          "type": "ACTIVITY",
-          "name": "领取“现男友”奖品",
-          "schema":
-              "https://m.gotokeep.com/ug-page/team/home/5d36b2c3b57b8508b1c3ad4d?fullscreen=true&source=mine",
-          "icon":
-              "https://static1.keepcdn.com/2019/04/25/19/1556191060449_72x72.png",
-          "notify": true,
-          "notifyId": "1561515731"
-        },
+        // {
+        //   "type": "ACTIVITY",
+        //   "name": "领取“现男友”奖品",
+        //   "schema":
+        //       "https://m.gotokeep.com/ug-page/team/home/5d36b2c3b57b8508b1c3ad4d?fullscreen=true&source=mine",
+        //   "icon":
+        //       "https://static1.keepcdn.com/2019/04/25/19/1556191060449_72x72.png",
+        //   "notify": true,
+        //   "notifyId": "1561515731"
+        // },
         {
           "type": "SERVICE",
           "name": "帮助中心",
