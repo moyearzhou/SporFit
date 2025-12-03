@@ -41,7 +41,7 @@ class _PlanPageState extends State<PlanPage> {
               child: IconButton(
                 icon: Image.asset('res/imgs/sport_nav_right_wristband.png'),
                 onPressed: () {
-                  Toast.show('keep手环');
+                  Toast.show('Sporphy手环');
                 },
               ),
             ),

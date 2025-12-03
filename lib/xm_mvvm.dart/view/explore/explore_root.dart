@@ -96,7 +96,7 @@ class _ExploreRootSceneState extends State<ExploreRootScene> with TickerProvider
     {
       'icon':
           'https://img.alicdn.com/bao/uploaded/i1/3010695444/O1CN01nRV9zY1q5On0JgxKx_!!0-item_pic.jpg_240x240.jpg',
-      'title': 'Keep周边'
+      'title': 'Sporphy 周边'
     },
   ];
 
@@ -422,7 +422,7 @@ class _ExploreRootSceneState extends State<ExploreRootScene> with TickerProvider
   //热门活动
   _hotActivity() {
     List _activities = [
-      {'title': 'Keep 马拉松 | 跑过暑假', 'num': '37071'},
+      {'title': 'Sporphy 马拉松 | 跑过暑假', 'num': '37071'},
       {'title': '减脂挑战.暴汗突击瘦身', 'num': '546064'},
       {'title': '7月跑量挑战', 'num': '179171'},
       {'title': '暑假悄悄变瘦计划', 'num': '401395'}

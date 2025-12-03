@@ -2,7 +2,7 @@ Map planData = {
 	"ok": true,
 	"data": {
 		"userInfo": {
-			"name": "淡然Ooooooo",
+			"name": "Moyear",
 			"userId": "578445017b2a7a3a051cc112",
 			"memberInfo": {
 				"member": true,
