@@ -11,7 +11,7 @@ Map sportData = {
     "bindKitbit": false
   },
   "userInfo": {
-    "name": "淡然Ooooooo",
+    "name": "Moyear",
     "userId": "578445017b2a7a3a051cc112",
     "avatar":
         "http://static1.keepcdn.com/avatar/2016/07/12/09/a4c2963f43a953b53dbf607310cb95760d2b8b12.jpg",

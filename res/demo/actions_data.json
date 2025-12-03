@@ -1,0 +1,601 @@
+{
+  "bodyParts": [
+    {"id": "chest", "name": "胸", "isParent": true},
+    {"id": "upper_chest", "name": "上胸", "parentId": "chest"},
+    {"id": "mid_lower_chest", "name": "中下胸", "parentId": "chest"},
+    {"id": "back", "name": "背", "isParent": true},
+    {"id": "leg", "name": "腿", "isParent": true},
+    {"id": "shoulder", "name": "肩", "isParent": true},
+    {"id": "trapezius", "name": "斜方肌", "isParent": true},
+    {"id": "biceps", "name": "二头", "isParent": true},
+    {"id": "triceps", "name": "三头", "isParent": true},
+    {"id": "calf", "name": "小腿", "isParent": true},
+    {"id": "forearm", "name": "前臂", "isParent": true},
+    {"id": "glutes", "name": "臀部", "isParent": true},
+    {"id": "abs", "name": "腹部", "isParent": true},
+    {"id": "stretch", "name": "拉伸", "isParent": true},
+    {"id": "cardio", "name": "有氧", "isParent": true},
+    {"id": "full_body", "name": "全身", "isParent": true}
+  ],
+  "equipment": [
+    {"id": "dumbbell", "name": "哑铃", "icon": "res/imgs/equipment_dumbbell.png"},
+    {"id": "resistance_band", "name": "弹力带", "icon": "res/imgs/equipment_band.png"},
+    {"id": "kettlebell", "name": "壶铃", "icon": "res/imgs/equipment_kettlebell.png"},
+    {"id": "bodyweight", "name": "自重", "icon": "res/imgs/equipment_bodyweight.png"}
+  ],
+  "filterTabs": [
+    {"id": "all", "name": "全部"},
+    {"id": "home", "name": "居家"}
+  ],
+  "actions": {
+    "chest": {
+      "pinned": [
+        {
+          "id": "barbell_bench_press_wide",
+          "name": "杠铃宽距卧推",
+          "equipment": "barbell",
+          "image": "https://static1.keepcdn.com/2019/04/01/15/1554105842274_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": false
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "dumbbell_flat_bench_press",
+          "name": "哑铃平板卧推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742679844_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "dumbbell_flat_fly",
+          "name": "哑铃平板飞鸟",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742747428_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "incline_dumbbell_press",
+          "name": "上斜哑铃卧推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742811965_556x556.gif",
+          "isHot": false,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "dumbbell_bench_press",
+          "name": "哑铃卧推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742867543_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "dumbbell_pullover",
+          "name": "哑铃仰卧上拉",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742920876_556x556.gif",
+          "isHot": false,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "decline_dumbbell_press",
+          "name": "下斜哑铃卧推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742976543_556x556.gif",
+          "isHot": false,
+          "bodyPart": "chest",
+          "isHome": false
+        }
+      ],
+      "resistance_band": [
+        {
+          "id": "band_chest_press",
+          "name": "弹力带夹胸",
+          "equipment": "resistance_band",
+          "image": "https://static1.keepcdn.com/2019/03/29/10/1553828511234_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "band_push_up",
+          "name": "弹力带俯卧撑",
+          "equipment": "resistance_band",
+          "image": "https://static1.keepcdn.com/2019/03/29/10/1553828567432_556x556.gif",
+          "isHot": false,
+          "bodyPart": "chest",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "push_up",
+          "name": "标准俯卧撑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "wide_push_up",
+          "name": "宽距俯卧撑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832178654_556x556.gif",
+          "isHot": true,
+          "bodyPart": "chest",
+          "isHome": true
+        },
+        {
+          "id": "diamond_push_up",
+          "name": "钻石俯卧撑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832234567_556x556.gif",
+          "isHot": false,
+          "bodyPart": "chest",
+          "isHome": true
+        }
+      ]
+    },
+    "back": {
+      "pinned": [
+        {
+          "id": "pull_up",
+          "name": "引体向上",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/02/09/1554170123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "back",
+          "isHome": false
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "dumbbell_row",
+          "name": "哑铃划船",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/02/10/1554173456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "back",
+          "isHome": true
+        },
+        {
+          "id": "dumbbell_shrug",
+          "name": "哑铃耸肩",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/02/10/1554173512345_556x556.gif",
+          "isHot": false,
+          "bodyPart": "back",
+          "isHome": true
+        }
+      ],
+      "resistance_band": [
+        {
+          "id": "band_row",
+          "name": "弹力带划船",
+          "equipment": "resistance_band",
+          "image": "https://static1.keepcdn.com/2019/04/02/11/1554176789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "back",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "superman",
+          "name": "超人式",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/02/11/1554176845678_556x556.gif",
+          "isHot": true,
+          "bodyPart": "back",
+          "isHome": true
+        }
+      ]
+    },
+    "leg": {
+      "pinned": [
+        {
+          "id": "squat",
+          "name": "深蹲",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/03/09/1554256789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "leg",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "dumbbell_squat",
+          "name": "哑铃深蹲",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/03/10/1554260123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "leg",
+          "isHome": true
+        },
+        {
+          "id": "dumbbell_lunge",
+          "name": "哑铃弓步蹲",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/03/10/1554260178901_556x556.gif",
+          "isHot": true,
+          "bodyPart": "leg",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "lunge",
+          "name": "弓步蹲",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/03/11/1554263456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "leg",
+          "isHome": true
+        },
+        {
+          "id": "jump_squat",
+          "name": "跳跃深蹲",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/03/11/1554263512345_556x556.gif",
+          "isHot": false,
+          "bodyPart": "leg",
+          "isHome": true
+        }
+      ]
+    },
+    "shoulder": {
+      "pinned": [
+        {
+          "id": "dumbbell_shoulder_press",
+          "name": "哑铃肩推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/04/09/1554343456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "shoulder",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "lateral_raise",
+          "name": "哑铃侧平举",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/04/10/1554346789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "shoulder",
+          "isHome": true
+        },
+        {
+          "id": "front_raise",
+          "name": "哑铃前平举",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/04/10/1554346845678_556x556.gif",
+          "isHot": false,
+          "bodyPart": "shoulder",
+          "isHome": true
+        },
+        {
+          "id": "rear_delt_fly",
+          "name": "俯身哑铃飞鸟",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/04/10/1554346901234_556x556.gif",
+          "isHot": true,
+          "bodyPart": "shoulder",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "pike_push_up",
+          "name": "俯身肩推",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/04/11/1554350123456_556x556.gif",
+          "isHot": false,
+          "bodyPart": "shoulder",
+          "isHome": true
+        }
+      ]
+    },
+    "biceps": {
+      "pinned": [
+        {
+          "id": "dumbbell_curl",
+          "name": "哑铃弯举",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/05/09/1554430123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "biceps",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "hammer_curl",
+          "name": "锤式弯举",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/05/10/1554433456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "biceps",
+          "isHome": true
+        },
+        {
+          "id": "concentration_curl",
+          "name": "集中弯举",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/05/10/1554433512345_556x556.gif",
+          "isHot": false,
+          "bodyPart": "biceps",
+          "isHome": true
+        }
+      ],
+      "resistance_band": [
+        {
+          "id": "band_curl",
+          "name": "弹力带弯举",
+          "equipment": "resistance_band",
+          "image": "https://static1.keepcdn.com/2019/04/05/11/1554436789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "biceps",
+          "isHome": true
+        }
+      ]
+    },
+    "triceps": {
+      "pinned": [
+        {
+          "id": "tricep_dip",
+          "name": "三头臂屈伸",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/06/09/1554516789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "triceps",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "overhead_extension",
+          "name": "过头臂屈伸",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/06/10/1554520123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "triceps",
+          "isHome": true
+        },
+        {
+          "id": "kickback",
+          "name": "哑铃后踢",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/06/10/1554520178901_556x556.gif",
+          "isHot": false,
+          "bodyPart": "triceps",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "close_grip_push_up",
+          "name": "窄距俯卧撑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/06/11/1554523456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "triceps",
+          "isHome": true
+        }
+      ]
+    },
+    "abs": {
+      "pinned": [
+        {
+          "id": "crunch",
+          "name": "卷腹",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/07/09/1554603456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "abs",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "dumbbell_side_bend",
+          "name": "哑铃侧屈",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/07/10/1554606789012_556x556.gif",
+          "isHot": false,
+          "bodyPart": "abs",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "plank",
+          "name": "平板支撑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/07/10/1554606845678_556x556.gif",
+          "isHot": true,
+          "bodyPart": "abs",
+          "isHome": true
+        },
+        {
+          "id": "leg_raise",
+          "name": "仰卧举腿",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/07/10/1554606901234_556x556.gif",
+          "isHot": true,
+          "bodyPart": "abs",
+          "isHome": true
+        },
+        {
+          "id": "bicycle_crunch",
+          "name": "自行车卷腹",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/07/11/1554610123456_556x556.gif",
+          "isHot": false,
+          "bodyPart": "abs",
+          "isHome": true
+        },
+        {
+          "id": "mountain_climber",
+          "name": "登山跑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/07/11/1554610178901_556x556.gif",
+          "isHot": true,
+          "bodyPart": "abs",
+          "isHome": true
+        }
+      ]
+    },
+    "glutes": {
+      "pinned": [
+        {
+          "id": "hip_bridge",
+          "name": "臀桥",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/08/09/1554690123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "glutes",
+          "isHome": true
+        }
+      ],
+      "dumbbell": [
+        {
+          "id": "dumbbell_hip_thrust",
+          "name": "哑铃臀推",
+          "equipment": "dumbbell",
+          "image": "https://static1.keepcdn.com/2019/04/08/10/1554693456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "glutes",
+          "isHome": true
+        }
+      ],
+      "resistance_band": [
+        {
+          "id": "band_glute_kickback",
+          "name": "弹力带臀后踢",
+          "equipment": "resistance_band",
+          "image": "https://static1.keepcdn.com/2019/04/08/10/1554693512345_556x556.gif",
+          "isHot": true,
+          "bodyPart": "glutes",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "donkey_kick",
+          "name": "跪姿后踢",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/08/11/1554696789012_556x556.gif",
+          "isHot": false,
+          "bodyPart": "glutes",
+          "isHome": true
+        },
+        {
+          "id": "fire_hydrant",
+          "name": "跪姿侧抬腿",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/08/11/1554696845678_556x556.gif",
+          "isHot": true,
+          "bodyPart": "glutes",
+          "isHome": true
+        }
+      ]
+    },
+    "cardio": {
+      "pinned": [
+        {
+          "id": "jumping_jack",
+          "name": "开合跳",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/09/09/1554776789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "cardio",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "burpee",
+          "name": "波比跳",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/09/10/1554780123456_556x556.gif",
+          "isHot": true,
+          "bodyPart": "cardio",
+          "isHome": true
+        },
+        {
+          "id": "high_knee",
+          "name": "高抬腿",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/09/10/1554780178901_556x556.gif",
+          "isHot": true,
+          "bodyPart": "cardio",
+          "isHome": true
+        },
+        {
+          "id": "butt_kick",
+          "name": "后踢腿跑",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/09/10/1554780234567_556x556.gif",
+          "isHot": false,
+          "bodyPart": "cardio",
+          "isHome": true
+        }
+      ]
+    },
+    "stretch": {
+      "pinned": [
+        {
+          "id": "standing_quad_stretch",
+          "name": "站姿大腿拉伸",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/10/09/1554863456789_556x556.gif",
+          "isHot": true,
+          "bodyPart": "stretch",
+          "isHome": true
+        }
+      ],
+      "bodyweight": [
+        {
+          "id": "hamstring_stretch",
+          "name": "腘绳肌拉伸",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/10/10/1554866789012_556x556.gif",
+          "isHot": true,
+          "bodyPart": "stretch",
+          "isHome": true
+        },
+        {
+          "id": "chest_stretch",
+          "name": "胸肌拉伸",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/10/10/1554866845678_556x556.gif",
+          "isHot": false,
+          "bodyPart": "stretch",
+          "isHome": true
+        },
+        {
+          "id": "shoulder_stretch",
+          "name": "肩部拉伸",
+          "equipment": "bodyweight",
+          "image": "https://static1.keepcdn.com/2019/04/10/10/1554866901234_556x556.gif",
+          "isHot": false,
+          "bodyPart": "stretch",
+          "isHome": true
+        }
+      ]
+    }
+  }
+}
+
