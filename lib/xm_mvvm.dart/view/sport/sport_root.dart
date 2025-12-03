@@ -10,7 +10,7 @@ class SportPage extends StatefulWidget {
 
 class _SportPageState extends State<SportPage>  with TickerProviderStateMixin {
   late TabController tabCtr;
-  var tabs = ['现在开始', '跑步', '行走', '智能硬件', '瑜伽'];
+  var tabs = ['现在开始', '跑步', '智能硬件'];
   @override
 
   void initState() {

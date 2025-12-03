@@ -33,7 +33,7 @@ class _XMTabbarPageState extends State<XMTabbarPage> with AutomaticKeepAliveClie
   
   // 页面列表 - 只创建一次
   late final List<Widget> _pages = [
-    ExploreRootScene(),
+    // ExploreRootScene(),
     SportPage(),
     PlanPage(),
     MePage(),
@@ -41,7 +41,7 @@ class _XMTabbarPageState extends State<XMTabbarPage> with AutomaticKeepAliveClie
 
   // 底部导航配置
   final List<_TabItem> _tabItems = [
-    _TabItem(label: '探索', iconPath: 'res/imgs/tab_0.png'),
+    // _TabItem(label: '探索', iconPath: 'res/imgs/tab_0.png'),
     _TabItem(label: '运动', iconPath: 'res/imgs/tab_1.png'),
     _TabItem(label: '计划', iconPath: 'res/imgs/tab_2.png'),
     _TabItem(label: '我', iconPath: 'res/imgs/tab_3.png'),

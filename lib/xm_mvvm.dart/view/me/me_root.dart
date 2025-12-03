@@ -212,7 +212,7 @@ class _MePageState extends State<MePage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Keep 会员',
+            Text('Sporphy 会员',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             SizedBox(height: 13),
             Text(

@@ -4,7 +4,7 @@ Map meData = {
   "data": {
     "user": {
       "id": "578445017b2a7a3a051cc112",
-      "username": "淡然Ooooooo",
+      "username": "Moyear",
       "gender": "M",
       "avatar":
           "http://static1.keepcdn.com/avatar/2016/07/12/09/a4c2963f43a953b53dbf607310cb95760d2b8b12.jpg",
@@ -23,7 +23,7 @@ Map meData = {
           "https://show.gotokeep.com/prime?fullscreen=true&kbizPos=page_mine",
       "memberInfo": {
         "memberStatus": 1,
-        "title": "Keep 会员",
+        "title": "Sporphy 会员",
         "text": "夏日狂欢，立减 70 元",
         "buttonText": "我的会员",
         "buttonSchema":
