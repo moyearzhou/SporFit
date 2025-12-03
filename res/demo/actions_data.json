@@ -21,12 +21,320 @@
     {"id": "dumbbell", "name": "哑铃", "icon": "res/imgs/equipment_dumbbell.png"},
     {"id": "resistance_band", "name": "弹力带", "icon": "res/imgs/equipment_band.png"},
     {"id": "kettlebell", "name": "壶铃", "icon": "res/imgs/equipment_kettlebell.png"},
-    {"id": "bodyweight", "name": "自重", "icon": "res/imgs/equipment_bodyweight.png"}
+    {"id": "bodyweight", "name": "自重", "icon": "res/imgs/equipment_bodyweight.png"},
+    {"id": "barbell", "name": "杠铃", "icon": "res/imgs/equipment_barbell.png"}
   ],
   "filterTabs": [
     {"id": "all", "name": "全部"},
     {"id": "home", "name": "居家"}
   ],
+  "actionDetails": {
+    "barbell_bench_press_wide": {
+      "id": "barbell_bench_press_wide",
+      "name": "杠铃宽距卧推",
+      "equipment": "barbell",
+      "equipmentName": "杠铃",
+      "image": "https://static1.keepcdn.com/2019/04/01/15/1554105842274_556x556.gif",
+      "bodyPart": "chest",
+      "bodyPartName": "中下胸",
+      "isHot": true,
+      "isHome": false,
+      "isFavorite": false,
+      "likeCount": 189,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
+      "steps": {
+        "preparation": "仰卧在平凳上，背部和头部紧贴凳面，双脚平放在地面上，保持稳定。\n双手握住杠铃，握距比肩宽约1.5倍，确保握距一致。",
+        "startPosition": "将杠铃从支架上抬起，手臂伸直，杠铃悬于胸部上方。\n确保肩膀下沉，避免耸肩，保持肩胛骨稳定。",
+        "movement": "缓慢下降杠铃，直到杠铃触及胸部中部，肘部向外展开。\n在最低点时，前部肌肉用力，保持紧张感。\n用力推举杠铃回到起始位置，手臂伸直但不锁死肘关节。",
+        "return": "控制杠铃缓慢回到起始位置，保持动作稳定，避免使用惯性。"
+      },
+      "primaryMuscles": ["胸大肌中束", "胸大肌下束"],
+      "secondaryMuscles": ["三角肌前束", "肱三头肌"],
+      "tips": [
+        "呼吸：下降时吸气，推举时呼气，保持呼吸平稳。",
+        "核心收紧：保持核心肌群收紧，防止腰部过度弯曲。",
+        "姿势控制：保持身体在整个动作过程中保持稳定，避免臀部离开凳面。",
+        "呼吸均匀：保持呼吸均匀，不要屏住呼吸，以避免头晕或不适。",
+        "正确的热身和拉伸：在进行杠铃宽握卧推之前，确保充分热身，并在结束后进行适当的拉伸，以避免受伤。"
+      ],
+      "commonMistakes": [
+        "背部拱起：保持背部紧贴凳面，避免过度拱起，不要弯曲。",
+        "手腕弯曲：握住杠铃时，保持手腕中立位，避免过度展开或内收。",
+        "肘部过度展开：控制肘部角度，避免过度展开或内收。"
+      ],
+      "safetyTips": [
+        "避免过度用力：如在进行杠铃宽握卧推时感到不适，立即停止，并检查姿势。",
+        "保持稳定：在整个动作过程中，保持身体稳定。逐渐增加重量，避免突然增加负重。",
+        "逐渐增加重量：从适当的重量开始，逐渐增加，以确保肌肉得到充分锻炼，防止肌肉拉伤或疲劳。",
+        "呼吸均匀：保持呼吸均匀，不要屏住呼吸，以避免头晕或不适。",
+        "正确的热身和拉伸：在进行杠铃宽握卧推之前，确保充分热身，并在结束后进行适当的拉伸，以避免受伤。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "dumbbell_arnold_press",
+          "name": "哑铃阿诺德推举",
+          "image": "https://static1.keepcdn.com/2019/04/04/10/1554346789012_556x556.gif",
+          "isHot": true
+        },
+        {
+          "id": "incline_cable_fly",
+          "name": "上斜绳索飞鸟",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742747428_556x556.gif",
+          "isHot": true
+        },
+        {
+          "id": "band_push_up",
+          "name": "弹力带推胸",
+          "image": "https://static1.keepcdn.com/2019/03/29/10/1553828567432_556x556.gif",
+          "isHot": false
+        },
+        {
+          "id": "smith_bench_press",
+          "name": "史密斯卧推",
+          "image": "https://static1.keepcdn.com/2019/03/28/11/1553742679844_556x556.gif",
+          "isHot": false
+        }
+      ]
+    },
+    "dumbbell_flat_bench_press": {
+      "id": "dumbbell_flat_bench_press",
+      "name": "哑铃平板卧推",
+      "equipment": "dumbbell",
+      "equipmentName": "哑铃",
+      "image": "https://static1.keepcdn.com/2019/03/28/11/1553742679844_556x556.gif",
+      "bodyPart": "chest",
+      "bodyPartName": "中下胸",
+      "isHot": true,
+      "isHome": true,
+      "isFavorite": true,
+      "likeCount": 256,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
+      "steps": {
+        "preparation": "仰卧在平凳上，双脚平放地面，背部和头部紧贴凳面。\n双手各握一只哑铃，掌心朝前。",
+        "startPosition": "将哑铃举至胸部上方，手臂伸直但不锁死肘关节。\n肩胛骨收紧下沉，保持稳定。",
+        "movement": "缓慢下降哑铃至胸部两侧，肘部弯曲约90度。\n胸肌发力，将哑铃推回起始位置。",
+        "return": "控制动作节奏，保持肌肉持续紧张。"
+      },
+      "primaryMuscles": ["胸大肌"],
+      "secondaryMuscles": ["三角肌前束", "肱三头肌"],
+      "tips": [
+        "保持核心收紧，背部微微拱起。",
+        "下降时吸气，推举时呼气。",
+        "动作全程保持控制，避免借力。"
+      ],
+      "commonMistakes": [
+        "肘部过度外展，增加肩关节压力。",
+        "下降过快，失去对重量的控制。",
+        "臀部离开凳面。"
+      ],
+      "safetyTips": [
+        "选择适当重量，避免过重导致受伤。",
+        "有搭档保护更安全。",
+        "热身充分后再进行训练。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "barbell_bench_press_wide",
+          "name": "杠铃宽距卧推",
+          "image": "https://static1.keepcdn.com/2019/04/01/15/1554105842274_556x556.gif",
+          "isHot": true
+        },
+        {
+          "id": "push_up",
+          "name": "标准俯卧撑",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832123456_556x556.gif",
+          "isHot": true
+        }
+      ]
+    },
+    "dumbbell_flat_fly": {
+      "id": "dumbbell_flat_fly",
+      "name": "哑铃平板飞鸟",
+      "equipment": "dumbbell",
+      "equipmentName": "哑铃",
+      "image": "https://static1.keepcdn.com/2019/03/28/11/1553742747428_556x556.gif",
+      "bodyPart": "chest",
+      "bodyPartName": "胸",
+      "isHot": true,
+      "isHome": true,
+      "isFavorite": false,
+      "likeCount": 178,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
+      "steps": {
+        "preparation": "仰卧在平凳上，双脚平放地面。\n双手各握哑铃，掌心相对。",
+        "startPosition": "手臂伸直举至胸部正上方，肘部微曲。",
+        "movement": "保持肘部微曲，向两侧打开手臂。\n下降至胸部水平或略低，感受胸肌拉伸。",
+        "return": "胸肌发力，沿弧线将哑铃带回起始位置。"
+      },
+      "primaryMuscles": ["胸大肌"],
+      "secondaryMuscles": ["三角肌前束"],
+      "tips": [
+        "保持肘部微曲角度不变。",
+        "动作要慢，感受胸肌拉伸和收缩。",
+        "避免使用过重的重量。"
+      ],
+      "commonMistakes": [
+        "肘部过度弯曲变成卧推动作。",
+        "下降过低导致肩部不适。"
+      ],
+      "safetyTips": [
+        "使用较轻重量掌握动作要领。",
+        "肩部有伤病者慎做此动作。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "band_chest_press",
+          "name": "弹力带夹胸",
+          "image": "https://static1.keepcdn.com/2019/03/29/10/1553828511234_556x556.gif",
+          "isHot": true
+        }
+      ]
+    },
+    "push_up": {
+      "id": "push_up",
+      "name": "标准俯卧撑",
+      "equipment": "bodyweight",
+      "equipmentName": "自重",
+      "image": "https://static1.keepcdn.com/2019/03/29/11/1553832123456_556x556.gif",
+      "bodyPart": "chest",
+      "bodyPartName": "胸",
+      "isHot": true,
+      "isHome": true,
+      "isFavorite": true,
+      "likeCount": 520,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
+      "steps": {
+        "preparation": "双手撑地，与肩同宽或略宽。\n身体成一条直线，核心收紧。",
+        "startPosition": "手臂伸直，支撑身体。\n头部保持中立位置。",
+        "movement": "弯曲肘部，身体下降至胸部接近地面。\n保持身体呈一条直线。",
+        "return": "推起身体回到起始位置，手臂伸直。"
+      },
+      "primaryMuscles": ["胸大肌", "肱三头肌"],
+      "secondaryMuscles": ["三角肌前束", "核心肌群"],
+      "tips": [
+        "保持核心收紧，避免塌腰或撅臀。",
+        "下降时吸气，推起时呼气。",
+        "肘部不要过度外展。"
+      ],
+      "commonMistakes": [
+        "腰部下沉或臀部翘起。",
+        "头部过度抬起或低垂。",
+        "动作幅度不完整。"
+      ],
+      "safetyTips": [
+        "初学者可以从跪姿俯卧撑开始。",
+        "手腕不适可以使用俯卧撑支架。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "wide_push_up",
+          "name": "宽距俯卧撑",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832178654_556x556.gif",
+          "isHot": true
+        },
+        {
+          "id": "diamond_push_up",
+          "name": "钻石俯卧撑",
+          "image": "https://static1.keepcdn.com/2019/03/29/11/1553832234567_556x556.gif",
+          "isHot": false
+        }
+      ]
+    },
+    "dumbbell_row": {
+      "id": "dumbbell_row",
+      "name": "哑铃划船",
+      "equipment": "dumbbell",
+      "equipmentName": "哑铃",
+      "image": "https://static1.keepcdn.com/2019/04/02/10/1554173456789_556x556.gif",
+      "bodyPart": "back",
+      "bodyPartName": "背",
+      "isHot": true,
+      "isHome": true,
+      "isFavorite": false,
+      "likeCount": 312,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/02/muscle_back.png",
+      "steps": {
+        "preparation": "一只手和同侧膝盖支撑在凳子上。\n另一只手握住哑铃，手臂自然下垂。",
+        "startPosition": "背部保持平直，核心收紧。\n目视前方，头部保持中立。",
+        "movement": "背阔肌发力，将哑铃拉向腰侧。\n肘部贴近身体向后拉。",
+        "return": "控制下放哑铃回到起始位置。"
+      },
+      "primaryMuscles": ["背阔肌", "菱形肌"],
+      "secondaryMuscles": ["肱二头肌", "后三角肌"],
+      "tips": [
+        "拉起时肩胛骨向中间收紧。",
+        "避免身体过度旋转借力。",
+        "保持背部平直。"
+      ],
+      "commonMistakes": [
+        "用手臂力量拉而不是背部。",
+        "身体旋转过大。",
+        "背部弓起。"
+      ],
+      "safetyTips": [
+        "选择适当重量。",
+        "动作全程保持控制。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "band_row",
+          "name": "弹力带划船",
+          "image": "https://static1.keepcdn.com/2019/04/02/11/1554176789012_556x556.gif",
+          "isHot": true
+        }
+      ]
+    },
+    "squat": {
+      "id": "squat",
+      "name": "深蹲",
+      "equipment": "bodyweight",
+      "equipmentName": "自重",
+      "image": "https://static1.keepcdn.com/2019/04/03/09/1554256789012_556x556.gif",
+      "bodyPart": "leg",
+      "bodyPartName": "腿",
+      "isHot": true,
+      "isHome": true,
+      "isFavorite": true,
+      "likeCount": 689,
+      "muscleImage": "https://static1.keepcdn.com/2019/04/03/muscle_leg.png",
+      "steps": {
+        "preparation": "双脚与肩同宽或略宽站立。\n脚尖略微外展，约15-30度。",
+        "startPosition": "挺胸收腹，目视前方。\n双手可以放在胸前或向前伸直。",
+        "movement": "屈髋屈膝下蹲，膝盖沿脚尖方向。\n下蹲至大腿与地面平行或略低。",
+        "return": "臀腿发力站起回到起始位置。"
+      },
+      "primaryMuscles": ["股四头肌", "臀大肌"],
+      "secondaryMuscles": ["腘绳肌", "核心肌群"],
+      "tips": [
+        "膝盖不要内扣。",
+        "脚跟始终贴地。",
+        "保持背部挺直。"
+      ],
+      "commonMistakes": [
+        "膝盖内扣。",
+        "脚跟抬起。",
+        "背部过度前倾或弓背。"
+      ],
+      "safetyTips": [
+        "初学者先掌握动作再增加负重。",
+        "膝盖有问题者应咨询医生。"
+      ],
+      "alternativeActions": [
+        {
+          "id": "dumbbell_squat",
+          "name": "哑铃深蹲",
+          "image": "https://static1.keepcdn.com/2019/04/03/10/1554260123456_556x556.gif",
+          "isHot": true
+        },
+        {
+          "id": "lunge",
+          "name": "弓步蹲",
+          "image": "https://static1.keepcdn.com/2019/04/03/11/1554263456789_556x556.gif",
+          "isHot": true
+        }
+      ]
+    }
+  },
   "actions": {
     "chest": {
       "pinned": [
@@ -598,4 +906,3 @@
     }
   }
 }
-

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../public.dart';
 import 'sport_data.dart';
+import 'action_detail_page.dart';
 
 class SportPage extends StatefulWidget {
   SportPage({Key? key}) : super(key: key);
@@ -1016,7 +1017,16 @@ class _SportPageState extends State<SportPage>  with TickerProviderStateMixin {
   Widget _buildActionCard(Map action) {
     return GestureDetector(
       onTap: () {
-        Toast.show('点击了: ${action['name']}');
+        // 跳转到动作详情页面
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ActionDetailPage(
+              actionId: action['id'] ?? '',
+              actionBasicInfo: Map<String, dynamic>.from(action),
+            ),
+          ),
+        );
       },
       child: Container(
         decoration: BoxDecoration(
