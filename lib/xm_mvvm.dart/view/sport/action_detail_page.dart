@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../public.dart';
+import 'workout/workout_config_page.dart';
 
 /// 动作详情页面
 class ActionDetailPage extends StatefulWidget {
@@ -721,7 +722,14 @@ class _ActionDetailPageState extends State<ActionDetailPage> {
         top: false,
         child: GestureDetector(
           onTap: () {
-            Toast.show('开始练习: ${actionDetail!['name']}');
+            // 使用统一路由跳转到跟练配置页面
+            xmPush(WorkoutConfigPage(
+              initialAction: {
+                'id': widget.actionId,
+                'name': actionDetail!['name'],
+                'image': actionDetail!['image'],
+              },
+            ));
           },
           child: Container(
             height: 48,
