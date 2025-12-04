@@ -6,6 +6,7 @@ import 'record_mode_widget.dart';
 import 'follow_mode_widget.dart';
 import 'action_arrange_sheet.dart';
 import 'action_picker_page.dart';
+import 'workout_execution_page.dart';
 
 /// 跟练配置页面
 class WorkoutConfigPage extends StatefulWidget {
@@ -429,8 +430,8 @@ class _WorkoutConfigPageState extends State<WorkoutConfigPage>
       Toast.show('请先添加动作');
       return;
     }
-    Toast.show('开始跟练');
-    // TODO: 进入跟练执行页面
+    // 使用统一路由跳转到跟练执行页面
+    xmPush(WorkoutExecutionPage(session: _session));
   }
 }
 
