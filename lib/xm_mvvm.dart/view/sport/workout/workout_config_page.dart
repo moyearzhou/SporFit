@@ -5,6 +5,7 @@ import 'workout_model.dart';
 import 'record_mode_widget.dart';
 import 'follow_mode_widget.dart';
 import 'action_arrange_sheet.dart';
+import 'action_picker_page.dart';
 
 /// 跟练配置页面
 class WorkoutConfigPage extends StatefulWidget {
@@ -74,10 +75,37 @@ class _WorkoutConfigPageState extends State<WorkoutConfigPage>
     return '${minutes.toString().padLeft(2, '0')}:${secs.toString().padLeft(2, '0')}';
   }
 
-  void _onAddAction() {
-    // 跳转到动作列表页面选择动作
-    Toast.show('选择要添加的动作');
-    // TODO: 跳转到动作列表页面
+  void _onAddAction() async {
+    // 获取当前已有动作的ID列表
+    List<String> existingIds = _session.actions.map((a) => a.id).toList();
+    
+    // 跳转到动作选择页面（多选模式）
+    final result = await ActionPickerPage.show(
+      context,
+      mode: ActionPickerMode.multiple,
+      initialSelectedIds: existingIds,
+    );
+    
+    if (result != null && result.selectedActions.isNotEmpty) {
+      setState(() {
+        // 添加新选择的动作（排除已存在的）
+        for (var actionData in result.selectedActions) {
+          String actionId = actionData['id'] ?? '';
+          if (!existingIds.contains(actionId)) {
+            _session.addAction(WorkoutAction(
+              id: actionId,
+              name: actionData['name'] ?? '',
+              image: actionData['image'],
+            ));
+          }
+        }
+      });
+      
+      int addedCount = result.selectedActions.length - existingIds.length;
+      if (addedCount > 0) {
+        Toast.show('已添加 $addedCount 个动作');
+      }
+    }
   }
 
   void _onArrangeActions() {
@@ -377,7 +405,7 @@ class _WorkoutConfigPageState extends State<WorkoutConfigPage>
     required String label,
     required VoidCallback onTap,
   }) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Column(
         mainAxisSize: MainAxisSize.min,
