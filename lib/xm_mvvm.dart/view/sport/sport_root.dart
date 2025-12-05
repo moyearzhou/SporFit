@@ -708,16 +708,18 @@ class _SportPageState extends State<SportPage>  with TickerProviderStateMixin {
               ],
             ),
           ),
-          SizedBox(width: 12),
+          SizedBox(width: 8),
           // 添加按钮
-          Container(
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              border: Border.all(color: Color(0xFF333333), width: 1.5),
-              shape: BoxShape.circle,
+          Visibility(
+            visible: false,
+            child: Container(
+              child: InkWell(
+                onTap: () {
+                  Toast.show('添加');
+                },
+                  child: Icon(Icons.add_circle_outline_outlined, size: 24, color: Color(0xFF333333))
+              ),
             ),
-            child: Icon(Icons.add, size: 20, color: Color(0xFF333333)),
           ),
         ],
       ),
