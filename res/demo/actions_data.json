@@ -42,12 +42,24 @@
       "isFavorite": false,
       "likeCount": 189,
       "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
-      "steps": {
-        "preparation": "仰卧在平凳上，背部和头部紧贴凳面，双脚平放在地面上，保持稳定。\n双手握住杠铃，握距比肩宽约1.5倍，确保握距一致。",
-        "startPosition": "将杠铃从支架上抬起，手臂伸直，杠铃悬于胸部上方。\n确保肩膀下沉，避免耸肩，保持肩胛骨稳定。",
-        "movement": "缓慢下降杠铃，直到杠铃触及胸部中部，肘部向外展开。\n在最低点时，前部肌肉用力，保持紧张感。\n用力推举杠铃回到起始位置，手臂伸直但不锁死肘关节。",
-        "return": "控制杠铃缓慢回到起始位置，保持动作稳定，避免使用惯性。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "仰卧在平凳上，背部和头部紧贴凳面，双脚平放在地面上，保持稳定。\n双手握住杠铃，握距比肩宽约1.5倍，确保握距一致。"
+        },
+        {
+          "name": "startPosition",
+          "description": "将杠铃从支架上抬起，手臂伸直，杠铃悬于胸部上方。\n确保肩膀下沉，避免耸肩，保持肩胛骨稳定。"
+        },
+        {
+          "name": "movement",
+          "description": "缓慢下降杠铃，直到杠铃触及胸部中部，肘部向外展开。\n在最低点时，前部肌肉用力，保持紧张感。\n用力推举杠铃回到起始位置，手臂伸直但不锁死肘关节。"
+        },
+        {
+          "name": "return",
+          "description": "控制杠铃缓慢回到起始位置，保持动作稳定，避免使用惯性。"
+        }
+      ],
       "primaryMuscles": ["胸大肌中束", "胸大肌下束"],
       "secondaryMuscles": ["三角肌前束", "肱三头肌"],
       "tips": [
@@ -109,12 +121,24 @@
       "isFavorite": true,
       "likeCount": 256,
       "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
-      "steps": {
-        "preparation": "仰卧在平凳上，双脚平放地面，背部和头部紧贴凳面。\n双手各握一只哑铃，掌心朝前。",
-        "startPosition": "将哑铃举至胸部上方，手臂伸直但不锁死肘关节。\n肩胛骨收紧下沉，保持稳定。",
-        "movement": "缓慢下降哑铃至胸部两侧，肘部弯曲约90度。\n胸肌发力，将哑铃推回起始位置。",
-        "return": "控制动作节奏，保持肌肉持续紧张。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "仰卧在平凳上，双脚平放地面，背部和头部紧贴凳面。\n双手各握一只哑铃，掌心朝前。"
+        },
+        {
+          "name": "startPosition",
+          "description": "将哑铃举至胸部上方，手臂伸直但不锁死肘关节。\n肩胛骨收紧下沉，保持稳定。"
+        },
+        {
+          "name": "movement",
+          "description": "缓慢下降哑铃至胸部两侧，肘部弯曲约90度。\n胸肌发力，将哑铃推回起始位置。"
+        },
+        {
+          "name": "return",
+          "description": "控制动作节奏，保持肌肉持续紧张。"
+        }
+      ],
       "primaryMuscles": ["胸大肌"],
       "secondaryMuscles": ["三角肌前束", "肱三头肌"],
       "tips": [
@@ -160,12 +184,24 @@
       "isFavorite": false,
       "likeCount": 178,
       "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
-      "steps": {
-        "preparation": "仰卧在平凳上，双脚平放地面。\n双手各握哑铃，掌心相对。",
-        "startPosition": "手臂伸直举至胸部正上方，肘部微曲。",
-        "movement": "保持肘部微曲，向两侧打开手臂。\n下降至胸部水平或略低，感受胸肌拉伸。",
-        "return": "胸肌发力，沿弧线将哑铃带回起始位置。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "仰卧在平凳上，双脚平放地面。\n双手各握哑铃，掌心相对。"
+        },
+        {
+          "name": "startPosition",
+          "description": "手臂伸直举至胸部正上方，肘部微曲。"
+        },
+        {
+          "name": "movement",
+          "description": "保持肘部微曲，向两侧打开手臂。\n下降至胸部水平或略低，感受胸肌拉伸。"
+        },
+        {
+          "name": "return",
+          "description": "胸肌发力，沿弧线将哑铃带回起始位置。"
+        }
+      ],
       "primaryMuscles": ["胸大肌"],
       "secondaryMuscles": ["三角肌前束"],
       "tips": [
@@ -203,12 +239,24 @@
       "isFavorite": true,
       "likeCount": 520,
       "muscleImage": "https://static1.keepcdn.com/2019/04/01/muscle_chest.png",
-      "steps": {
-        "preparation": "双手撑地，与肩同宽或略宽。\n身体成一条直线，核心收紧。",
-        "startPosition": "手臂伸直，支撑身体。\n头部保持中立位置。",
-        "movement": "弯曲肘部，身体下降至胸部接近地面。\n保持身体呈一条直线。",
-        "return": "推起身体回到起始位置，手臂伸直。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "双手撑地，与肩同宽或略宽。\n身体成一条直线，核心收紧。"
+        },
+        {
+          "name": "startPosition",
+          "description": "手臂伸直，支撑身体。\n头部保持中立位置。"
+        },
+        {
+          "name": "movement",
+          "description": "弯曲肘部，身体下降至胸部接近地面。\n保持身体呈一条直线。"
+        },
+        {
+          "name": "return",
+          "description": "推起身体回到起始位置，手臂伸直。"
+        }
+      ],
       "primaryMuscles": ["胸大肌", "肱三头肌"],
       "secondaryMuscles": ["三角肌前束", "核心肌群"],
       "tips": [
@@ -253,12 +301,24 @@
       "isFavorite": false,
       "likeCount": 312,
       "muscleImage": "https://static1.keepcdn.com/2019/04/02/muscle_back.png",
-      "steps": {
-        "preparation": "一只手和同侧膝盖支撑在凳子上。\n另一只手握住哑铃，手臂自然下垂。",
-        "startPosition": "背部保持平直，核心收紧。\n目视前方，头部保持中立。",
-        "movement": "背阔肌发力，将哑铃拉向腰侧。\n肘部贴近身体向后拉。",
-        "return": "控制下放哑铃回到起始位置。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "一只手和同侧膝盖支撑在凳子上。\n另一只手握住哑铃，手臂自然下垂。"
+        },
+        {
+          "name": "startPosition",
+          "description": "背部保持平直，核心收紧。\n目视前方，头部保持中立。"
+        },
+        {
+          "name": "movement",
+          "description": "背阔肌发力，将哑铃拉向腰侧。\n肘部贴近身体向后拉。"
+        },
+        {
+          "name": "return",
+          "description": "控制下放哑铃回到起始位置。"
+        }
+      ],
       "primaryMuscles": ["背阔肌", "菱形肌"],
       "secondaryMuscles": ["肱二头肌", "后三角肌"],
       "tips": [
@@ -297,12 +357,24 @@
       "isFavorite": true,
       "likeCount": 689,
       "muscleImage": "https://static1.keepcdn.com/2019/04/03/muscle_leg.png",
-      "steps": {
-        "preparation": "双脚与肩同宽或略宽站立。\n脚尖略微外展，约15-30度。",
-        "startPosition": "挺胸收腹，目视前方。\n双手可以放在胸前或向前伸直。",
-        "movement": "屈髋屈膝下蹲，膝盖沿脚尖方向。\n下蹲至大腿与地面平行或略低。",
-        "return": "臀腿发力站起回到起始位置。"
-      },
+      "steps": [
+        {
+          "name": "preparation",
+          "description": "双脚与肩同宽或略宽站立。\n脚尖略微外展，约15-30度。"
+        },
+        {
+          "name": "startPosition",
+          "description": "挺胸收腹，目视前方。\n双手可以放在胸前或向前伸直。"
+        },
+        {
+          "name": "movement",
+          "description": "屈髋屈膝下蹲，膝盖沿脚尖方向。\n下蹲至大腿与地面平行或略低。"
+        },
+        {
+          "name": "return",
+          "description": "臀腿发力站起回到起始位置。"
+        }
+      ],
       "primaryMuscles": ["股四头肌", "臀大肌"],
       "secondaryMuscles": ["腘绳肌", "核心肌群"],
       "tips": [
